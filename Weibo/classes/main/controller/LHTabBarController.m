@@ -11,6 +11,9 @@
 #import "LHMessageTableViewController.h"
 #import "LHDiscoverTableViewController.h"
 #import "LHWeTableViewController.h"
+#import "UIImage+LH.h"
+
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 @interface LHTabBarController ()
 
@@ -46,9 +49,15 @@
     childVc.title = title;  //可以同时设置下面两个属性
     // home.tabBarItem.title = @"home";
     // home.navigationItem.title = @"home";
+    if (iOS7) {
+        childVc.tabBarItem.selectedImage =[[UIImage imageWithName:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    else{
+        childVc.tabBarItem.selectedImage =[UIImage imageNamed:selectedImageName];
+    }
     
-    childVc.tabBarItem.image = [UIImage imageNamed:imageName];
-    childVc.tabBarItem.selectedImage =[[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childVc.tabBarItem.image = [UIImage imageWithName:imageName];
+   
     UINavigationController *childVcnav = [[UINavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:childVcnav];
 }

@@ -16,6 +16,7 @@
 		EBD06A281A7F72C500EF8209 /* LHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A171A7F72C500EF8209 /* LHTabBarController.m */; };
 		EBD06A291A7F72C500EF8209 /* LHWeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A1D1A7F72C500EF8209 /* LHWeTableViewController.m */; };
 		EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */; };
+		EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		EBD06A1D1A7F72C500EF8209 /* LHWeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHWeTableViewController.m; sourceTree = "<group>"; };
 		EBD06A221A7F72C500EF8209 /* LHMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMessageTableViewController.h; sourceTree = "<group>"; };
 		EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMessageTableViewController.m; sourceTree = "<group>"; };
+		EBD06A2D1A7F802400EF8209 /* UIImage+LH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+LH.h"; path = "others/Category/UIImage+LH.h"; sourceTree = "<group>"; };
+		EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+LH.m"; path = "others/Category/UIImage+LH.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,11 +305,21 @@
 		EBD06A2B1A7F72E400EF8209 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				EBD06A2C1A7F7FD900EF8209 /* Category */,
 				EBD069D21A7F1F5400EF8209 /* main.m */,
 				EBD069D41A7F1F5400EF8209 /* AppDelegate.h */,
 				EBD069D51A7F1F5400EF8209 /* AppDelegate.m */,
 			);
 			name = other;
+			sourceTree = "<group>";
+		};
+		EBD06A2C1A7F7FD900EF8209 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A2D1A7F802400EF8209 /* UIImage+LH.h */,
+				EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +427,7 @@
 				EBD06A291A7F72C500EF8209 /* LHWeTableViewController.m in Sources */,
 				EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */,
 				EBD069D31A7F1F5400EF8209 /* main.m in Sources */,
+				EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
