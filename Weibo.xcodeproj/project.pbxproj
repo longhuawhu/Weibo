@@ -10,10 +10,13 @@
 		EBD069D31A7F1F5400EF8209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D21A7F1F5400EF8209 /* main.m */; };
 		EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D51A7F1F5400EF8209 /* AppDelegate.m */; };
 		EBD069D91A7F1F5400EF8209 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D81A7F1F5400EF8209 /* ViewController.m */; };
-		EBD069DC1A7F1F5400EF8209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD069DA1A7F1F5400EF8209 /* Main.storyboard */; };
-		EBD069DE1A7F1F5400EF8209 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD069DD1A7F1F5400EF8209 /* Images.xcassets */; };
-		EBD069E11A7F1F5400EF8209 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBD069DF1A7F1F5400EF8209 /* LaunchScreen.xib */; };
 		EBD069ED1A7F1F5400EF8209 /* WeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069EC1A7F1F5400EF8209 /* WeiboTests.m */; };
+		EBD069F81A7F263100EF8209 /* LHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069F71A7F263100EF8209 /* LHTabBarController.m */; };
+		EBD069FB1A7F26AA00EF8209 /* LHHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069FA1A7F26AA00EF8209 /* LHHomeTableViewController.m */; };
+		EBD069FE1A7F26B900EF8209 /* LHMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069FD1A7F26B900EF8209 /* LHMessageTableViewController.m */; };
+		EBD06A011A7F277100EF8209 /* LHDiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A001A7F277100EF8209 /* LHDiscoverTableViewController.m */; };
+		EBD06A041A7F27A000EF8209 /* LHWeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A031A7F27A000EF8209 /* LHWeTableViewController.m */; };
+		EBD06A061A7F669800EF8209 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD06A051A7F669800EF8209 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +37,20 @@
 		EBD069D51A7F1F5400EF8209 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EBD069D71A7F1F5400EF8209 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EBD069D81A7F1F5400EF8209 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		EBD069DB1A7F1F5400EF8209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EBD069DD1A7F1F5400EF8209 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EBD069E01A7F1F5400EF8209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EBD069E61A7F1F5400EF8209 /* WeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD069EB1A7F1F5400EF8209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD069EC1A7F1F5400EF8209 /* WeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiboTests.m; sourceTree = "<group>"; };
+		EBD069F61A7F263100EF8209 /* LHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTabBarController.h; sourceTree = "<group>"; };
+		EBD069F71A7F263100EF8209 /* LHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTabBarController.m; sourceTree = "<group>"; };
+		EBD069F91A7F26AA00EF8209 /* LHHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHHomeTableViewController.h; sourceTree = "<group>"; };
+		EBD069FA1A7F26AA00EF8209 /* LHHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHHomeTableViewController.m; sourceTree = "<group>"; };
+		EBD069FC1A7F26B900EF8209 /* LHMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMessageTableViewController.h; sourceTree = "<group>"; };
+		EBD069FD1A7F26B900EF8209 /* LHMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMessageTableViewController.m; sourceTree = "<group>"; };
+		EBD069FF1A7F277100EF8209 /* LHDiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDiscoverTableViewController.h; sourceTree = "<group>"; };
+		EBD06A001A7F277100EF8209 /* LHDiscoverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHDiscoverTableViewController.m; sourceTree = "<group>"; };
+		EBD06A021A7F27A000EF8209 /* LHWeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHWeTableViewController.h; sourceTree = "<group>"; };
+		EBD06A031A7F27A000EF8209 /* LHWeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHWeTableViewController.m; sourceTree = "<group>"; };
+		EBD06A051A7F669800EF8209 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +96,16 @@
 				EBD069D51A7F1F5400EF8209 /* AppDelegate.m */,
 				EBD069D71A7F1F5400EF8209 /* ViewController.h */,
 				EBD069D81A7F1F5400EF8209 /* ViewController.m */,
-				EBD069DA1A7F1F5400EF8209 /* Main.storyboard */,
-				EBD069DD1A7F1F5400EF8209 /* Images.xcassets */,
-				EBD069DF1A7F1F5400EF8209 /* LaunchScreen.xib */,
+				EBD06A051A7F669800EF8209 /* Media.xcassets */,
 				EBD069D01A7F1F5400EF8209 /* Supporting Files */,
+				EBD069F61A7F263100EF8209 /* LHTabBarController.h */,
+				EBD069F71A7F263100EF8209 /* LHTabBarController.m */,
+				EBD069F91A7F26AA00EF8209 /* LHHomeTableViewController.h */,
+				EBD069FA1A7F26AA00EF8209 /* LHHomeTableViewController.m */,
+				EBD069FC1A7F26B900EF8209 /* LHMessageTableViewController.h */,
+				EBD069FD1A7F26B900EF8209 /* LHMessageTableViewController.m */,
+				EBD069FF1A7F277100EF8209 /* LHDiscoverTableViewController.h */,
+				EBD06A001A7F277100EF8209 /* LHDiscoverTableViewController.m */,
 			);
 			path = Weibo;
 			sourceTree = "<group>";
@@ -98,6 +115,8 @@
 			children = (
 				EBD069D11A7F1F5400EF8209 /* Info.plist */,
 				EBD069D21A7F1F5400EF8209 /* main.m */,
+				EBD06A021A7F27A000EF8209 /* LHWeTableViewController.h */,
+				EBD06A031A7F27A000EF8209 /* LHWeTableViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,9 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD069DC1A7F1F5400EF8209 /* Main.storyboard in Resources */,
-				EBD069E11A7F1F5400EF8209 /* LaunchScreen.xib in Resources */,
-				EBD069DE1A7F1F5400EF8209 /* Images.xcassets in Resources */,
+				EBD06A061A7F669800EF8209 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +237,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD069D91A7F1F5400EF8209 /* ViewController.m in Sources */,
+				EBD069FE1A7F26B900EF8209 /* LHMessageTableViewController.m in Sources */,
+				EBD06A011A7F277100EF8209 /* LHDiscoverTableViewController.m in Sources */,
+				EBD06A041A7F27A000EF8209 /* LHWeTableViewController.m in Sources */,
 				EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */,
+				EBD069FB1A7F26AA00EF8209 /* LHHomeTableViewController.m in Sources */,
 				EBD069D31A7F1F5400EF8209 /* main.m in Sources */,
+				EBD069F81A7F263100EF8209 /* LHTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +264,6 @@
 			targetProxy = EBD069E71A7F1F5400EF8209 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EBD069DA1A7F1F5400EF8209 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBD069DB1A7F1F5400EF8209 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EBD069DF1A7F1F5400EF8209 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBD069E01A7F1F5400EF8209 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EBD069EE1A7F1F5400EF8209 /* Debug */ = {
@@ -344,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Weibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Weibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
