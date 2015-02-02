@@ -12,11 +12,12 @@
 #import "LHDiscoverTableViewController.h"
 #import "LHWeTableViewController.h"
 #import "UIImage+LH.h"
+#import "LHTabBar.h"
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 @interface LHTabBarController ()
-
+@property (nonatomic, weak)LHTabBar *customTabBar;
 @end
 
 @implementation LHTabBarController
@@ -25,13 +26,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //1.初始化所有的子控制器
+    
+    [self setupTabBar];
+    
     [self setupAllChildViewController];
     
 }
+
+-(void)setupTabBar
+{
+    LHTabBar *customTabBar = [[LHTabBar alloc] init];
+    customTabBar.backgroundColor = [UIColor redColor];
+    customTabBar.frame = self.tabBar.bounds;
+    [self.tabBar addSubview:customTabBar];
+    self.customTabBar = customTabBar;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    for (UIView *child in self.tabBar.subviews ) {
+        if ([child isKindOfClass:[UIControl class]]) {
+            [child removeFromSuperview];
+        }
+    }
+}
+
+
 -(void)setupAllChildViewController
 {
     LHHomeTableViewController *home = [[LHHomeTableViewController alloc] init];
-    [self setupChildViewController:home title:@"home" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
+    [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
     LHMessageTableViewController *message = [[LHMessageTableViewController alloc] init];
     [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
@@ -60,6 +85,8 @@
    
     UINavigationController *childVcnav = [[UINavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:childVcnav];
+    
+    [self.customTabBar addTabBarButtonWithItem:childVc.tabBarItem];
 }
 
 - (void)didReceiveMemoryWarning {

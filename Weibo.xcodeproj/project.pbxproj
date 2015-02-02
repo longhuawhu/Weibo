@@ -17,6 +17,7 @@
 		EBD06A291A7F72C500EF8209 /* LHWeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A1D1A7F72C500EF8209 /* LHWeTableViewController.m */; };
 		EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */; };
 		EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */; };
+		EBD06A321A7F83DA00EF8209 /* LHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A311A7F83DA00EF8209 /* LHTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMessageTableViewController.m; sourceTree = "<group>"; };
 		EBD06A2D1A7F802400EF8209 /* UIImage+LH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+LH.h"; path = "others/Category/UIImage+LH.h"; sourceTree = "<group>"; };
 		EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+LH.m"; path = "others/Category/UIImage+LH.m"; sourceTree = "<group>"; };
+		EBD06A301A7F83DA00EF8209 /* LHTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTabBar.h; sourceTree = "<group>"; };
+		EBD06A311A7F83DA00EF8209 /* LHTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +235,8 @@
 		EBD06A191A7F72C500EF8209 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				EBD06A301A7F83DA00EF8209 /* LHTabBar.h */,
+				EBD06A311A7F83DA00EF8209 /* LHTabBar.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD06A261A7F72C500EF8209 /* LHDiscoverTableViewController.m in Sources */,
+				EBD06A321A7F83DA00EF8209 /* LHTabBar.m in Sources */,
 				EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */,
 				EBD06A271A7F72C500EF8209 /* LHHomeTableViewController.m in Sources */,
 				EBD06A281A7F72C500EF8209 /* LHTabBarController.m in Sources */,
