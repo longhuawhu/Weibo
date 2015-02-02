@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		EBD069D31A7F1F5400EF8209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D21A7F1F5400EF8209 /* main.m */; };
 		EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D51A7F1F5400EF8209 /* AppDelegate.m */; };
-		EBD069D91A7F1F5400EF8209 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D81A7F1F5400EF8209 /* ViewController.m */; };
 		EBD069ED1A7F1F5400EF8209 /* WeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069EC1A7F1F5400EF8209 /* WeiboTests.m */; };
-		EBD069F81A7F263100EF8209 /* LHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069F71A7F263100EF8209 /* LHTabBarController.m */; };
-		EBD069FB1A7F26AA00EF8209 /* LHHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069FA1A7F26AA00EF8209 /* LHHomeTableViewController.m */; };
-		EBD069FE1A7F26B900EF8209 /* LHMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069FD1A7F26B900EF8209 /* LHMessageTableViewController.m */; };
-		EBD06A011A7F277100EF8209 /* LHDiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A001A7F277100EF8209 /* LHDiscoverTableViewController.m */; };
-		EBD06A041A7F27A000EF8209 /* LHWeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A031A7F27A000EF8209 /* LHWeTableViewController.m */; };
 		EBD06A061A7F669800EF8209 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD06A051A7F669800EF8209 /* Media.xcassets */; };
+		EBD06A261A7F72C500EF8209 /* LHDiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A0B1A7F72C500EF8209 /* LHDiscoverTableViewController.m */; };
+		EBD06A271A7F72C500EF8209 /* LHHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A111A7F72C500EF8209 /* LHHomeTableViewController.m */; };
+		EBD06A281A7F72C500EF8209 /* LHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A171A7F72C500EF8209 /* LHTabBarController.m */; };
+		EBD06A291A7F72C500EF8209 /* LHWeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A1D1A7F72C500EF8209 /* LHWeTableViewController.m */; };
+		EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,25 +31,23 @@
 /* Begin PBXFileReference section */
 		EBD069CD1A7F1F5400EF8209 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD069D11A7F1F5400EF8209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBD069D21A7F1F5400EF8209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EBD069D41A7F1F5400EF8209 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EBD069D51A7F1F5400EF8209 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EBD069D71A7F1F5400EF8209 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EBD069D81A7F1F5400EF8209 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EBD069D21A7F1F5400EF8209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
+		EBD069D41A7F1F5400EF8209 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		EBD069D51A7F1F5400EF8209 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		EBD069E61A7F1F5400EF8209 /* WeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD069EB1A7F1F5400EF8209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD069EC1A7F1F5400EF8209 /* WeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiboTests.m; sourceTree = "<group>"; };
-		EBD069F61A7F263100EF8209 /* LHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTabBarController.h; sourceTree = "<group>"; };
-		EBD069F71A7F263100EF8209 /* LHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTabBarController.m; sourceTree = "<group>"; };
-		EBD069F91A7F26AA00EF8209 /* LHHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHHomeTableViewController.h; sourceTree = "<group>"; };
-		EBD069FA1A7F26AA00EF8209 /* LHHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHHomeTableViewController.m; sourceTree = "<group>"; };
-		EBD069FC1A7F26B900EF8209 /* LHMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMessageTableViewController.h; sourceTree = "<group>"; };
-		EBD069FD1A7F26B900EF8209 /* LHMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMessageTableViewController.m; sourceTree = "<group>"; };
-		EBD069FF1A7F277100EF8209 /* LHDiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDiscoverTableViewController.h; sourceTree = "<group>"; };
-		EBD06A001A7F277100EF8209 /* LHDiscoverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHDiscoverTableViewController.m; sourceTree = "<group>"; };
-		EBD06A021A7F27A000EF8209 /* LHWeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHWeTableViewController.h; sourceTree = "<group>"; };
-		EBD06A031A7F27A000EF8209 /* LHWeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHWeTableViewController.m; sourceTree = "<group>"; };
 		EBD06A051A7F669800EF8209 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		EBD06A0A1A7F72C500EF8209 /* LHDiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDiscoverTableViewController.h; sourceTree = "<group>"; };
+		EBD06A0B1A7F72C500EF8209 /* LHDiscoverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHDiscoverTableViewController.m; sourceTree = "<group>"; };
+		EBD06A101A7F72C500EF8209 /* LHHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHHomeTableViewController.h; sourceTree = "<group>"; };
+		EBD06A111A7F72C500EF8209 /* LHHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHHomeTableViewController.m; sourceTree = "<group>"; };
+		EBD06A161A7F72C500EF8209 /* LHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTabBarController.h; sourceTree = "<group>"; };
+		EBD06A171A7F72C500EF8209 /* LHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTabBarController.m; sourceTree = "<group>"; };
+		EBD06A1C1A7F72C500EF8209 /* LHWeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHWeTableViewController.h; sourceTree = "<group>"; };
+		EBD06A1D1A7F72C500EF8209 /* LHWeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHWeTableViewController.m; sourceTree = "<group>"; };
+		EBD06A221A7F72C500EF8209 /* LHMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMessageTableViewController.h; sourceTree = "<group>"; };
+		EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMessageTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,20 +89,9 @@
 		EBD069CF1A7F1F5400EF8209 /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
-				EBD069D41A7F1F5400EF8209 /* AppDelegate.h */,
-				EBD069D51A7F1F5400EF8209 /* AppDelegate.m */,
-				EBD069D71A7F1F5400EF8209 /* ViewController.h */,
-				EBD069D81A7F1F5400EF8209 /* ViewController.m */,
+				EBD06A071A7F72C500EF8209 /* classes */,
 				EBD06A051A7F669800EF8209 /* Media.xcassets */,
 				EBD069D01A7F1F5400EF8209 /* Supporting Files */,
-				EBD069F61A7F263100EF8209 /* LHTabBarController.h */,
-				EBD069F71A7F263100EF8209 /* LHTabBarController.m */,
-				EBD069F91A7F26AA00EF8209 /* LHHomeTableViewController.h */,
-				EBD069FA1A7F26AA00EF8209 /* LHHomeTableViewController.m */,
-				EBD069FC1A7F26B900EF8209 /* LHMessageTableViewController.h */,
-				EBD069FD1A7F26B900EF8209 /* LHMessageTableViewController.m */,
-				EBD069FF1A7F277100EF8209 /* LHDiscoverTableViewController.h */,
-				EBD06A001A7F277100EF8209 /* LHDiscoverTableViewController.m */,
 			);
 			path = Weibo;
 			sourceTree = "<group>";
@@ -114,9 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				EBD069D11A7F1F5400EF8209 /* Info.plist */,
-				EBD069D21A7F1F5400EF8209 /* main.m */,
-				EBD06A021A7F27A000EF8209 /* LHWeTableViewController.h */,
-				EBD06A031A7F27A000EF8209 /* LHWeTableViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,6 +119,194 @@
 				EBD069EB1A7F1F5400EF8209 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBD06A071A7F72C500EF8209 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A2B1A7F72E400EF8209 /* other */,
+				EBD06A081A7F72C500EF8209 /* discover */,
+				EBD06A0E1A7F72C500EF8209 /* home */,
+				EBD06A141A7F72C500EF8209 /* main */,
+				EBD06A1A1A7F72C500EF8209 /* me */,
+				EBD06A201A7F72C500EF8209 /* message */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		EBD06A081A7F72C500EF8209 /* discover */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A091A7F72C500EF8209 /* controller */,
+				EBD06A0C1A7F72C500EF8209 /* model */,
+				EBD06A0D1A7F72C500EF8209 /* view */,
+			);
+			path = discover;
+			sourceTree = "<group>";
+		};
+		EBD06A091A7F72C500EF8209 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A0A1A7F72C500EF8209 /* LHDiscoverTableViewController.h */,
+				EBD06A0B1A7F72C500EF8209 /* LHDiscoverTableViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		EBD06A0C1A7F72C500EF8209 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EBD06A0D1A7F72C500EF8209 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EBD06A0E1A7F72C500EF8209 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A0F1A7F72C500EF8209 /* controller */,
+				EBD06A121A7F72C500EF8209 /* model */,
+				EBD06A131A7F72C500EF8209 /* view */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		EBD06A0F1A7F72C500EF8209 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A101A7F72C500EF8209 /* LHHomeTableViewController.h */,
+				EBD06A111A7F72C500EF8209 /* LHHomeTableViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		EBD06A121A7F72C500EF8209 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EBD06A131A7F72C500EF8209 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EBD06A141A7F72C500EF8209 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A151A7F72C500EF8209 /* controller */,
+				EBD06A181A7F72C500EF8209 /* model */,
+				EBD06A191A7F72C500EF8209 /* view */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		EBD06A151A7F72C500EF8209 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A161A7F72C500EF8209 /* LHTabBarController.h */,
+				EBD06A171A7F72C500EF8209 /* LHTabBarController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		EBD06A181A7F72C500EF8209 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EBD06A191A7F72C500EF8209 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EBD06A1A1A7F72C500EF8209 /* me */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A1B1A7F72C500EF8209 /* controller */,
+				EBD06A1E1A7F72C500EF8209 /* model */,
+				EBD06A1F1A7F72C500EF8209 /* view */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		EBD06A1B1A7F72C500EF8209 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A1C1A7F72C500EF8209 /* LHWeTableViewController.h */,
+				EBD06A1D1A7F72C500EF8209 /* LHWeTableViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		EBD06A1E1A7F72C500EF8209 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EBD06A1F1A7F72C500EF8209 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EBD06A201A7F72C500EF8209 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A211A7F72C500EF8209 /* controller */,
+				EBD06A241A7F72C500EF8209 /* model */,
+				EBD06A251A7F72C500EF8209 /* view */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		EBD06A211A7F72C500EF8209 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBD06A221A7F72C500EF8209 /* LHMessageTableViewController.h */,
+				EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		EBD06A241A7F72C500EF8209 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EBD06A251A7F72C500EF8209 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EBD06A2B1A7F72E400EF8209 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				EBD069D21A7F1F5400EF8209 /* main.m */,
+				EBD069D41A7F1F5400EF8209 /* AppDelegate.h */,
+				EBD069D51A7F1F5400EF8209 /* AppDelegate.m */,
+			);
+			name = other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,14 +407,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD069D91A7F1F5400EF8209 /* ViewController.m in Sources */,
-				EBD069FE1A7F26B900EF8209 /* LHMessageTableViewController.m in Sources */,
-				EBD06A011A7F277100EF8209 /* LHDiscoverTableViewController.m in Sources */,
-				EBD06A041A7F27A000EF8209 /* LHWeTableViewController.m in Sources */,
+				EBD06A261A7F72C500EF8209 /* LHDiscoverTableViewController.m in Sources */,
+				EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */,
+				EBD06A271A7F72C500EF8209 /* LHHomeTableViewController.m in Sources */,
+				EBD06A281A7F72C500EF8209 /* LHTabBarController.m in Sources */,
+				EBD06A291A7F72C500EF8209 /* LHWeTableViewController.m in Sources */,
 				EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */,
-				EBD069FB1A7F26AA00EF8209 /* LHHomeTableViewController.m in Sources */,
 				EBD069D31A7F1F5400EF8209 /* main.m in Sources */,
-				EBD069F81A7F263100EF8209 /* LHTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
