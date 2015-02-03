@@ -10,4 +10,5 @@
 
 @interface UIImage (LH)
 +(UIImage*) imageWithName:(NSString *)imageName;
++(UIImage*) resizeImageWithName:(NSString *)name;
 @end

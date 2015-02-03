@@ -7,37 +7,51 @@
 //
 
 #import "LHTabBar.h"
+#import "LHTabBarButton.h"
+#import "public.h"
 
 @interface LHTabBar()
-@property (nonatomic, strong) UIButton *selectedBtn;
+@property (nonatomic, weak) UIButton *selectedBtn;
 @end
 
 @implementation LHTabBar
-//-(id) initWithFrame:(CGRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//       // <#statements#>
-//    }
-//    return self;
-//}
+-(id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        if (!iOS7) {
+             self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tabbar_background"]];
+        }
+       
+    }
+    return self;
+}
 
 
 -(void)addTabBarButtonWithItem:(UITabBarItem *)item
 {
-    UIButton *btn = [[UIButton alloc] init];
+    LHTabBarButton *btn = [[LHTabBarButton alloc] init];
+    
+    btn.item = item;
     
     [self addSubview:btn];
-    [btn setTitle:item.title forState:UIControlStateNormal];
-    [btn setImage:item.image forState:UIControlStateNormal];
-    [btn setImage:item.selectedImage forState:UIControlStateSelected];
+        
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
+    
+    if (self.subviews.count == 1) {
+        [self btnClick:btn];
+    }
 }
 
 -(void)btnClick:(UIButton*)btn
 {
-    btn.selected = YES;
+    if([self.delegate respondsToSelector:@selector(tabBar:didSelectedItemFrom:to:)])
+    {
+        [self.delegate tabBar:self didSelectedItemFrom:self.selectedBtn.tag to:btn.tag];
+    }
+    
     self.selectedBtn.selected = NO;
+    btn.selected = YES;
     self.selectedBtn = btn;
 }
 

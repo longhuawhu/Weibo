@@ -18,6 +18,8 @@
 		EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A231A7F72C500EF8209 /* LHMessageTableViewController.m */; };
 		EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */; };
 		EBD06A321A7F83DA00EF8209 /* LHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A311A7F83DA00EF8209 /* LHTabBar.m */; };
+		EBD06A351A7FB27C00EF8209 /* LHTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A341A7FB27C00EF8209 /* LHTabBarButton.m */; };
+		EBD06A391A807F8600EF8209 /* LHBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A381A807F8600EF8209 /* LHBadgeButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,11 @@
 		EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+LH.m"; path = "others/Category/UIImage+LH.m"; sourceTree = "<group>"; };
 		EBD06A301A7F83DA00EF8209 /* LHTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTabBar.h; sourceTree = "<group>"; };
 		EBD06A311A7F83DA00EF8209 /* LHTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTabBar.m; sourceTree = "<group>"; };
+		EBD06A331A7FB27C00EF8209 /* LHTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTabBarButton.h; sourceTree = "<group>"; };
+		EBD06A341A7FB27C00EF8209 /* LHTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTabBarButton.m; sourceTree = "<group>"; };
+		EBD06A361A7FC96400EF8209 /* public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = public.h; sourceTree = "<group>"; };
+		EBD06A371A807F8600EF8209 /* LHBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBadgeButton.h; sourceTree = "<group>"; };
+		EBD06A381A807F8600EF8209 /* LHBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBadgeButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +244,10 @@
 			children = (
 				EBD06A301A7F83DA00EF8209 /* LHTabBar.h */,
 				EBD06A311A7F83DA00EF8209 /* LHTabBar.m */,
+				EBD06A331A7FB27C00EF8209 /* LHTabBarButton.h */,
+				EBD06A341A7FB27C00EF8209 /* LHTabBarButton.m */,
+				EBD06A371A807F8600EF8209 /* LHBadgeButton.h */,
+				EBD06A381A807F8600EF8209 /* LHBadgeButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -323,6 +334,7 @@
 			children = (
 				EBD06A2D1A7F802400EF8209 /* UIImage+LH.h */,
 				EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */,
+				EBD06A361A7FC96400EF8209 /* public.h */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -425,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD06A391A807F8600EF8209 /* LHBadgeButton.m in Sources */,
 				EBD06A261A7F72C500EF8209 /* LHDiscoverTableViewController.m in Sources */,
 				EBD06A321A7F83DA00EF8209 /* LHTabBar.m in Sources */,
 				EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */,
@@ -432,6 +445,7 @@
 				EBD06A281A7F72C500EF8209 /* LHTabBarController.m in Sources */,
 				EBD06A291A7F72C500EF8209 /* LHWeTableViewController.m in Sources */,
 				EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */,
+				EBD06A351A7FB27C00EF8209 /* LHTabBarButton.m in Sources */,
 				EBD069D31A7F1F5400EF8209 /* main.m in Sources */,
 				EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */,
 			);

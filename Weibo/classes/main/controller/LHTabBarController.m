@@ -16,7 +16,7 @@
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
-@interface LHTabBarController ()
+@interface LHTabBarController () <LHTabBarDelegate>
 @property (nonatomic, weak)LHTabBar *customTabBar;
 @end
 
@@ -36,7 +36,8 @@
 -(void)setupTabBar
 {
     LHTabBar *customTabBar = [[LHTabBar alloc] init];
-    customTabBar.backgroundColor = [UIColor redColor];
+ //   customTabBar.backgroundColor = [UIColor redColor];
+    customTabBar.delegate = self;
     customTabBar.frame = self.tabBar.bounds;
     [self.tabBar addSubview:customTabBar];
     self.customTabBar = customTabBar;
@@ -52,13 +53,20 @@
     }
 }
 
+-(void)tabBar:(LHTabBar *)tabBar didSelectedItemFrom:(int)from to:(int)to
+{
+    self.selectedIndex = to;
+   // NSLog(@"%d -- %d", from, to);
+}
 
 -(void)setupAllChildViewController
 {
     LHHomeTableViewController *home = [[LHHomeTableViewController alloc] init];
+    home.tabBarItem.badgeValue = @"1";
     [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
     LHMessageTableViewController *message = [[LHMessageTableViewController alloc] init];
+    message.tabBarItem.badgeValue = @"12222";
     [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
     
     LHDiscoverTableViewController *discover = [[LHDiscoverTableViewController alloc] init];
