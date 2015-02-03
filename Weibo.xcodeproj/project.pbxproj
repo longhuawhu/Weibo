@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB7530611A80F36500CF72FA /* LHTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7530601A80F36500CF72FA /* LHTitleButton.m */; };
+		EB7530681A8104D100CF72FA /* LHNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7530671A8104D100CF72FA /* LHNewfeatureViewController.m */; };
 		EBD069D31A7F1F5400EF8209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D21A7F1F5400EF8209 /* main.m */; };
 		EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D51A7F1F5400EF8209 /* AppDelegate.m */; };
 		EBD069ED1A7F1F5400EF8209 /* WeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069EC1A7F1F5400EF8209 /* WeiboTests.m */; };
@@ -20,6 +22,9 @@
 		EBD06A321A7F83DA00EF8209 /* LHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A311A7F83DA00EF8209 /* LHTabBar.m */; };
 		EBD06A351A7FB27C00EF8209 /* LHTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A341A7FB27C00EF8209 /* LHTabBarButton.m */; };
 		EBD06A391A807F8600EF8209 /* LHBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A381A807F8600EF8209 /* LHBadgeButton.m */; };
+		EBD06A3C1A80AB6400EF8209 /* LHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A3B1A80AB6400EF8209 /* LHNavigationController.m */; };
+		EBD06A3F1A80C8C800EF8209 /* UIBarButtonItem+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A3E1A80C8C800EF8209 /* UIBarButtonItem+LH.m */; };
+		EBD06A421A80E65600EF8209 /* LHSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A411A80E65600EF8209 /* LHSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB75305F1A80F36500CF72FA /* LHTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTitleButton.h; sourceTree = "<group>"; };
+		EB7530601A80F36500CF72FA /* LHTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTitleButton.m; sourceTree = "<group>"; };
+		EB7530661A8104D100CF72FA /* LHNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNewfeatureViewController.h; sourceTree = "<group>"; };
+		EB7530671A8104D100CF72FA /* LHNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHNewfeatureViewController.m; sourceTree = "<group>"; };
 		EBD069CD1A7F1F5400EF8209 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD069D11A7F1F5400EF8209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD069D21A7F1F5400EF8209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
@@ -61,6 +70,12 @@
 		EBD06A361A7FC96400EF8209 /* public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = public.h; sourceTree = "<group>"; };
 		EBD06A371A807F8600EF8209 /* LHBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBadgeButton.h; sourceTree = "<group>"; };
 		EBD06A381A807F8600EF8209 /* LHBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBadgeButton.m; sourceTree = "<group>"; };
+		EBD06A3A1A80AB6400EF8209 /* LHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNavigationController.h; sourceTree = "<group>"; };
+		EBD06A3B1A80AB6400EF8209 /* LHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHNavigationController.m; sourceTree = "<group>"; };
+		EBD06A3D1A80C8C800EF8209 /* UIBarButtonItem+LH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LH.h"; sourceTree = "<group>"; };
+		EBD06A3E1A80C8C800EF8209 /* UIBarButtonItem+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LH.m"; sourceTree = "<group>"; };
+		EBD06A401A80E65600EF8209 /* LHSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSearchBar.h; sourceTree = "<group>"; };
+		EBD06A411A80E65600EF8209 /* LHSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB7530621A81048D00CF72FA /* newfeature */ = {
+			isa = PBXGroup;
+			children = (
+				EB7530631A81048D00CF72FA /* controller */,
+				EB7530641A81048D00CF72FA /* model */,
+				EB7530651A81048D00CF72FA /* view */,
+			);
+			name = newfeature;
+			path = home/newfeature;
+			sourceTree = "<group>";
+		};
+		EB7530631A81048D00CF72FA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB7530661A8104D100CF72FA /* LHNewfeatureViewController.h */,
+				EB7530671A8104D100CF72FA /* LHNewfeatureViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		EB7530641A81048D00CF72FA /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EB7530651A81048D00CF72FA /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		EBD069C41A7F1F5400EF8209 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +186,7 @@
 		EBD06A071A7F72C500EF8209 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				EB7530621A81048D00CF72FA /* newfeature */,
 				EBD06A2B1A7F72E400EF8209 /* other */,
 				EBD06A081A7F72C500EF8209 /* discover */,
 				EBD06A0E1A7F72C500EF8209 /* home */,
@@ -176,6 +226,8 @@
 		EBD06A0D1A7F72C500EF8209 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				EBD06A401A80E65600EF8209 /* LHSearchBar.h */,
+				EBD06A411A80E65600EF8209 /* LHSearchBar.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -209,6 +261,8 @@
 		EBD06A131A7F72C500EF8209 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				EB75305F1A80F36500CF72FA /* LHTitleButton.h */,
+				EB7530601A80F36500CF72FA /* LHTitleButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -228,6 +282,8 @@
 			children = (
 				EBD06A161A7F72C500EF8209 /* LHTabBarController.h */,
 				EBD06A171A7F72C500EF8209 /* LHTabBarController.m */,
+				EBD06A3A1A80AB6400EF8209 /* LHNavigationController.h */,
+				EBD06A3B1A80AB6400EF8209 /* LHNavigationController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -335,6 +391,8 @@
 				EBD06A2D1A7F802400EF8209 /* UIImage+LH.h */,
 				EBD06A2E1A7F802400EF8209 /* UIImage+LH.m */,
 				EBD06A361A7FC96400EF8209 /* public.h */,
+				EBD06A3D1A80C8C800EF8209 /* UIBarButtonItem+LH.h */,
+				EBD06A3E1A80C8C800EF8209 /* UIBarButtonItem+LH.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -437,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7530681A8104D100CF72FA /* LHNewfeatureViewController.m in Sources */,
 				EBD06A391A807F8600EF8209 /* LHBadgeButton.m in Sources */,
 				EBD06A261A7F72C500EF8209 /* LHDiscoverTableViewController.m in Sources */,
 				EBD06A321A7F83DA00EF8209 /* LHTabBar.m in Sources */,
@@ -444,10 +503,14 @@
 				EBD06A271A7F72C500EF8209 /* LHHomeTableViewController.m in Sources */,
 				EBD06A281A7F72C500EF8209 /* LHTabBarController.m in Sources */,
 				EBD06A291A7F72C500EF8209 /* LHWeTableViewController.m in Sources */,
+				EB7530611A80F36500CF72FA /* LHTitleButton.m in Sources */,
+				EBD06A3C1A80AB6400EF8209 /* LHNavigationController.m in Sources */,
 				EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */,
 				EBD06A351A7FB27C00EF8209 /* LHTabBarButton.m in Sources */,
 				EBD069D31A7F1F5400EF8209 /* main.m in Sources */,
+				EBD06A421A80E65600EF8209 /* LHSearchBar.m in Sources */,
 				EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */,
+				EBD06A3F1A80C8C800EF8209 /* UIBarButtonItem+LH.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +684,7 @@
 				EBD069F21A7F1F5400EF8209 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBD069F31A7F1F5400EF8209 /* Build configuration list for PBXNativeTarget "WeiboTests" */ = {
 			isa = XCConfigurationList;
@@ -629,6 +693,7 @@
 				EBD069F51A7F1F5400EF8209 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LHTabBarController.h"
+#import "LHNewfeatureViewController.h"
 
 
 @interface AppDelegate ()
@@ -22,7 +23,8 @@
     application.statusBarHidden = NO;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[LHTabBarController alloc] init];
+   // self.window.rootViewController = [[LHTabBarController alloc] init];
+    self.window.rootViewController = [[LHNewfeatureViewController alloc] init];
     
     [self.window makeKeyAndVisible];
     

@@ -13,6 +13,7 @@
 #import "LHWeTableViewController.h"
 #import "UIImage+LH.h"
 #import "LHTabBar.h"
+#import "LHNavigationController.h"
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
@@ -91,7 +92,7 @@
     
     childVc.tabBarItem.image = [UIImage imageWithName:imageName];
    
-    UINavigationController *childVcnav = [[UINavigationController alloc] initWithRootViewController:childVc];
+    LHNavigationController *childVcnav = [[LHNavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:childVcnav];
     
     [self.customTabBar addTabBarButtonWithItem:childVc.tabBarItem];

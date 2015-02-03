@@ -7,6 +7,9 @@
 //
 
 #import "LHHomeTableViewController.h"
+#import "UIImage+LH.h"
+#import "UIBarButtonItem+LH.h"
+#import "LHTitleButton.h"
 
 @interface LHHomeTableViewController ()
 
@@ -17,11 +20,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_pop" highIcon:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];;
+
+   // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithName:@"navigationbar_friendsearch"]style:UIBarMetricsDefault target:nil action:nil];
+    
+    LHTitleButton *titleButton = [LHTitleButton titleButton];
+    [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    [titleButton setTitle:@"haha" forState:UIControlStateNormal];
+    titleButton.frame = CGRectMake(0, 0, 100, 30);
+    [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    titleButton.selected = YES;
+    self.navigationItem.titleView = titleButton;
+}
+
+-(void)titleClick:(LHTitleButton *)titleButton
+{
+    if (titleButton.selected) {
+        [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+        titleButton.selected = NO;
+    }
+    else
+    {
+        [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+        titleButton.selected = YES;
+    }
+}
+
+-(void)findFriend
+{
+    
+}
+-(void)pop
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
