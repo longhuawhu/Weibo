@@ -20,11 +20,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    application.statusBarHidden = NO;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   // self.window.rootViewController = [[LHTabBarController alloc] init];
-    self.window.rootViewController = [[LHNewfeatureViewController alloc] init];
+   
+    //从沙盒中取出存储的版本号
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastVersion = [defaults stringForKey:@"lastVersion"];
+    
+    //获取软件版本号
+    NSString * currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    
+    if ([lastVersion isEqualToString:currentVersion]) {
+        application.statusBarHidden = NO;
+        self.window.rootViewController = [[LHTabBarController alloc] init];
+    }
+    else
+    {
+        //application.statusBarHidden = YES;
+        self.window.rootViewController = [[LHNewfeatureViewController alloc] init];
+        [defaults setObject:currentVersion forKey:@"lastVersion"];
+        [defaults synchronize];
+    }
     
     [self.window makeKeyAndVisible];
     

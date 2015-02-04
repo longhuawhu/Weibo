@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LHNewfeatureViewController : UIViewController
+@interface LHNewfeatureViewController : UIViewController <UIScrollViewDelegate>
 
 @end
