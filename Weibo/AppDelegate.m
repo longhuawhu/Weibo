@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "LHTabBarController.h"
 #import "LHNewfeatureViewController.h"
+#import "LHOauthViewController.h"
+#import "LHWbAccount.h"
 
 
 @interface AppDelegate ()
@@ -22,26 +24,40 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   
-    //从沙盒中取出存储的版本号
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *lastVersion = [defaults stringForKey:@"lastVersion"];
     
-    //获取软件版本号
-    NSString * currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-    
-    if ([lastVersion isEqualToString:currentVersion]) {
-        application.statusBarHidden = NO;
-        self.window.rootViewController = [[LHTabBarController alloc] init];
+    //1 是否授权登录成功
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *file = [doc stringByAppendingPathComponent:@"accout.data"];
+    LHWbAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+
+    if (account)
+    {//成功，
+        //从沙盒中取出存储的版本号
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *lastVersion = [defaults stringForKey:@"lastVersion"];
+        
+        
+        //获取软件版本号
+        NSString * currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+        
+        if ([lastVersion isEqualToString:currentVersion]) {
+            application.statusBarHidden = NO;
+            self.window.rootViewController = [[LHTabBarController alloc] init];
+        }
+        else
+        {
+            //application.statusBarHidden = YES;
+            self.window.rootViewController = [[LHNewfeatureViewController alloc] init];
+            [defaults setObject:currentVersion forKey:@"lastVersion"];
+            [defaults synchronize];
+        }
+
     }
-    else
+    else //失败，重新授权
     {
-        //application.statusBarHidden = YES;
-        self.window.rootViewController = [[LHNewfeatureViewController alloc] init];
-        [defaults setObject:currentVersion forKey:@"lastVersion"];
-        [defaults synchronize];
+        self.window.rootViewController = [[LHOauthViewController alloc] init];
     }
-    
+
     [self.window makeKeyAndVisible];
     
     return YES;
