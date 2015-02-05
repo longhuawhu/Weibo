@@ -11,6 +11,7 @@
 #import "LHNewfeatureViewController.h"
 #import "LHOauthViewController.h"
 #import "LHWbAccount.h"
+#import "LHWeiboTool.h"
 
 
 @interface AppDelegate ()
@@ -31,27 +32,8 @@
     LHWbAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
 
     if (account)
-    {//成功，
-        //从沙盒中取出存储的版本号
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSString *lastVersion = [defaults stringForKey:@"lastVersion"];
-        
-        
-        //获取软件版本号
-        NSString * currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-        
-        if ([lastVersion isEqualToString:currentVersion]) {
-            application.statusBarHidden = NO;
-            self.window.rootViewController = [[LHTabBarController alloc] init];
-        }
-        else
-        {
-            //application.statusBarHidden = YES;
-            self.window.rootViewController = [[LHNewfeatureViewController alloc] init];
-            [defaults setObject:currentVersion forKey:@"lastVersion"];
-            [defaults synchronize];
-        }
-
+    {
+        [LHWeiboTool chooseRootController];
     }
     else //失败，重新授权
     {
