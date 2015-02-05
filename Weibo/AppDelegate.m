@@ -12,6 +12,7 @@
 #import "LHOauthViewController.h"
 #import "LHWbAccount.h"
 #import "LHWeiboTool.h"
+#import "LHAccountTool.h"
 
 
 @interface AppDelegate ()
@@ -25,12 +26,11 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
     
     //1 是否授权登录成功
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *file = [doc stringByAppendingPathComponent:@"accout.data"];
-    LHWbAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
-
+    LHWbAccount *account = [LHAccountTool account];
+    
     if (account)
     {
         [LHWeiboTool chooseRootController];
@@ -39,8 +39,6 @@
     {
         self.window.rootViewController = [[LHOauthViewController alloc] init];
     }
-
-    [self.window makeKeyAndVisible];
     
     return YES;
 }

@@ -21,6 +21,7 @@
 		EB8AC4B61A835BEE00136A8E /* LHOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8AC4B21A835BEE00136A8E /* LHOauthViewController.m */; };
 		EB8AC4B71A835BEE00136A8E /* LHWbAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8AC4B51A835BEE00136A8E /* LHWbAccount.m */; };
 		EB8AC4BC1A835C0300136A8E /* LHNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8AC4BB1A835C0300136A8E /* LHNewfeatureViewController.m */; };
+		EB8AC4C01A835C9900136A8E /* LHAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8AC4BF1A835C9900136A8E /* LHAccountTool.m */; };
 		EBD069D31A7F1F5400EF8209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D21A7F1F5400EF8209 /* main.m */; };
 		EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D51A7F1F5400EF8209 /* AppDelegate.m */; };
 		EBD069ED1A7F1F5400EF8209 /* WeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069EC1A7F1F5400EF8209 /* WeiboTests.m */; };
@@ -79,6 +80,8 @@
 		EB8AC4B51A835BEE00136A8E /* LHWbAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHWbAccount.m; sourceTree = "<group>"; };
 		EB8AC4BA1A835C0300136A8E /* LHNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNewfeatureViewController.h; sourceTree = "<group>"; };
 		EB8AC4BB1A835C0300136A8E /* LHNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHNewfeatureViewController.m; sourceTree = "<group>"; };
+		EB8AC4BE1A835C9900136A8E /* LHAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHAccountTool.h; path = tool/LHAccountTool.h; sourceTree = "<group>"; };
+		EB8AC4BF1A835C9900136A8E /* LHAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LHAccountTool.m; path = tool/LHAccountTool.m; sourceTree = "<group>"; };
 		EBD069CD1A7F1F5400EF8209 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD069D11A7F1F5400EF8209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD069D21A7F1F5400EF8209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 		EB8AC4AF1A835BEE00136A8E /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
+				EB8AC4BD1A835C7B00136A8E /* tool */,
 				EB8AC4B01A835BEE00136A8E /* controller */,
 				EB8AC4B31A835BEE00136A8E /* model */,
 			);
@@ -210,6 +214,15 @@
 				EB8AC4BB1A835C0300136A8E /* LHNewfeatureViewController.m */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		EB8AC4BD1A835C7B00136A8E /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				EB8AC4BE1A835C9900136A8E /* LHAccountTool.h */,
+				EB8AC4BF1A835C9900136A8E /* LHAccountTool.m */,
+			);
+			name = tool;
 			sourceTree = "<group>";
 		};
 		EBD069C41A7F1F5400EF8209 = {
@@ -608,6 +621,7 @@
 				EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */,
 				EB7530861A82141200CF72FA /* AFHTTPRequestOperationManager.m in Sources */,
 				EB7530891A82141200CF72FA /* AFSecurityPolicy.m in Sources */,
+				EB8AC4C01A835C9900136A8E /* LHAccountTool.m in Sources */,
 				EBD06A3F1A80C8C800EF8209 /* UIBarButtonItem+LH.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,9 @@
 #import "LHOauthViewController.h"
 #import "AFNetworking.h"
 #import "LHWbAccount.h"
+#import "LHAccountTool.h"
+#import "LHWeiboTool.h"
+
 @interface LHOauthViewController() <UIWebViewDelegate>
 
 @end
@@ -59,11 +62,11 @@
     
    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
        
-       LHWbAccount *accout = [LHWbAccount accoutWithDict:responseObject];
+       LHWbAccount *account = [LHWbAccount accoutWithDict:responseObject];
        //
-       NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject];
-       NSString *file = [doc stringByAppendingPathComponent:@"accout.data"];
-       [NSKeyedArchiver archiveRootObject:accout toFile:file];
+       [LHAccountTool saveAccount:account];
+       
+       [LHWeiboTool chooseRootController];
     
    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        NSLog(@"%@", error);;
