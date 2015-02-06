@@ -29,8 +29,15 @@
         self.created_at = dict[@"created_at"];
         self.attitudes_count = [dict[@"attitudes_count"] intValue];
         self.thumbnail_pic = dict[@"thumbnail_pic"];
-        NSDictionary *retweeted_status = dict[@"retweeted_status"];
-        self.retweeted_status = nil;
+        NSDictionary *retweeteddict = dict[@"retweeted_status"];
+        if (retweeteddict) {
+         ///   NSLog(@"%@", retweeteddict);
+            self.retweeted_status = [[LHStatuses alloc] init];
+            self.retweeted_status.text = retweeteddict[@"text"];
+            self.retweeted_status.user = [LHUser userWithDict:retweeteddict[@"user"]];
+            self.retweeted_status.thumbnail_pic = retweeteddict[@"thumbnail_pic"];
+            NSLog(@"%@", self.retweeted_status.text);
+        }
     }
     
     return  self;

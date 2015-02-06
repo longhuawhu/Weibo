@@ -24,6 +24,7 @@
     
     //topView
     CGFloat topViewW = cellW;
+    CGFloat topViewH = 0;
     CGFloat topViewX = 0;
     CGFloat topViewY = 0;
     
@@ -65,10 +66,66 @@
     CGSize contentLabelSize = [status.text sizeWithFont:LHStatusNameFont constrainedToSize:CGSizeMake(cellW - 2*LHStatusCellBorder, MAXFLOAT)];
     _contentLableF = (CGRect){{contentLabelX, contentLabelY}, contentLabelSize};
     
-    CGFloat topViewH = CGRectGetMaxY(_contentLableF) + LHStatusCellBorder;
+    // 设置图片
+    if (status.thumbnail_pic) {
+        CGFloat thumbnail_picWH = 70;
+        CGFloat thumbnail_picX = LHStatusCellBorder;
+        CGFloat thumbnail_picY = CGRectGetMaxY(_contentLableF) +LHStatusCellBorder;
+        _photoViewF = CGRectMake(thumbnail_picX, thumbnail_picY, thumbnail_picWH, thumbnail_picWH);
+        
+    }
     
+    CGFloat contentLableMaxW = cellW - 2 * LHStatusCellBorder;
+    if (status.retweeted_status) {
+        CGFloat retweetViewW = contentLableMaxW;
+        CGFloat retweetViewX = contentLabelX;
+        CGFloat retweetViewY = CGRectGetMaxY(_contentLableF) +LHStatusCellBorder;
+        CGFloat retweetHeight = 0;
+        
+        CGFloat retweetNameLabelX = LHStatusCellBorder;
+        CGFloat retweetNameLabelY = LHStatusCellBorder;
+        CGSize retweetNameLabelSize = [status.retweeted_status.user.name sizeWithFont:LHStatusRetweetNameFont];
+        _retweetNameLableF = (CGRect){{retweetNameLabelX, retweetNameLabelY}, retweetNameLabelSize};
+        
+        CGFloat retweetContentLabelX = LHStatusCellBorder;
+        CGFloat retweetContextLabelY = CGRectGetMaxY(_retweetNameLableF) + LHStatusCellBorder;
+        CGSize retweetContentSize = [status.retweeted_status.text sizeWithFont:LHStatusRetweetNameFont constrainedToSize:CGSizeMake(retweetViewW - 2 * LHStatusCellBorder, MAXFLOAT)];
+        _retweetContentLableF = (CGRect){{retweetContentLabelX, retweetContextLabelY},retweetContentSize};
+        
+        
+        if (status.retweeted_status.thumbnail_pic) {
+            CGFloat thumbnail_picWH = 70;
+            CGFloat thumbnail_picX = retweetContentLabelX;
+            CGFloat thumbnail_picY = CGRectGetMaxY(_retweetContentLableF) +LHStatusCellBorder;
+            _retweetPhotoViewF= CGRectMake(thumbnail_picX, thumbnail_picY, thumbnail_picWH, thumbnail_picWH);
+            
+            retweetHeight = CGRectGetMaxY(_retweetPhotoViewF) +  LHStatusCellBorder;
+        }
+        else
+        {
+           retweetHeight = CGRectGetMaxY(_retweetContentLableF) +  LHStatusCellBorder;
+        }
+        _retweetViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetHeight);
+        
+        topViewH = CGRectGetMaxY(_retweetViewF);
+    }
+    else
+    {
+        if (status.thumbnail_pic) {
+            topViewH = CGRectGetMaxY(_photoViewF);
+        }
+        else
+        {
+            topViewH = CGRectGetMaxY(_contentLableF);
+        }
+    }
+    
+    topViewH +=LHStatusCellBorder;
+    
+//    CGFloat topViewH = MAX(CGRectGetMaxY(_contentLableF), CGRectGetMaxY(_photoViewF)) + LHStatusCellBorder;
+//    
     _topViewF = CGRectMake(0, 0, cellW, topViewH);
     
-    
+    _cellHeight = topViewH;
 }
 @end

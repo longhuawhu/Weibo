@@ -184,10 +184,49 @@
     self.contentLable.text = status.text;
     self.contentLable.frame = self.statusFrame.contentLableF;
     
+    //设置图片
+    if(status.thumbnail_pic)
+    {
+        self.photoView.hidden = NO;
+        self.photoView.frame = self.statusFrame.photoViewF;
+        [self.photoView sd_setImageWithURL:[NSURL URLWithString:status.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+    }
+    else
+    {
+        self.photoView.hidden = YES;
+    }
+    
 }
 
 -(void)setupRetweetData
 {
+    LHStatuses *retweetStatus = self.statusFrame.status.retweeted_status;
+    if (retweetStatus) {
+        self.retweetView.hidden = NO;
+        LHUser *user = retweetStatus.user;
+       
+        self.retweetView.frame = self.statusFrame.retweetViewF;
+        
+        self.retweetNameLable.text = user.name;
+        self.retweetNameLable.frame = self.statusFrame.retweetNameLableF;
+        
+        self.retweetContentLable.text = retweetStatus.text;
+        self.retweetContentLable.frame = self.statusFrame.retweetContentLableF;
+        
+        if (retweetStatus.thumbnail_pic) {
+            self.retweetPhotoView.hidden = NO;
+            self.retweetPhotoView.frame = self.statusFrame.retweetPhotoViewF;
+            [self.retweetPhotoView sd_setImageWithURL:[NSURL URLWithString:retweetStatus.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        }
+        else
+        {
+            self.retweetPhotoView.hidden = YES;
+        }
+    }
+    else
+    {
+         self.retweetView.hidden = YES;
+    }
     
 }
 

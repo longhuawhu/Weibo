@@ -128,7 +128,7 @@
 {
     LHStatusFrame *statusFrame = self.statuseFrames[indexPath.row];
     
-    return statusFrame.topViewF.size.height;
+    return statusFrame.cellHeight;
 }
 /*
 // Override to support conditional editing of the table view.

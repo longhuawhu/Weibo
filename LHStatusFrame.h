@@ -11,7 +11,10 @@
 
 
 #define LHStatusNameFont  [UIFont systemFontOfSize:13]
+#define LHStatusRetweetNameFont  LHStatusNameFont
+
 #define LHStatusTimeFont  [UIFont systemFontOfSize:11]
+
 #define LHStatusSourceFont  LHStatusTimeFont
 
 @class LHStatuses;
@@ -43,5 +46,7 @@
 @property (nonatomic, assign, readonly) CGRect retweetContentLableF;
 
 @property (nonatomic, assign, readonly) CGRect retweetPhotoViewF;
+
+@property (nonatomic, assign) float cellHeight;
 
 @end
