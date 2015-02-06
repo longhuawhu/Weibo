@@ -40,7 +40,7 @@
     NSString *urlStr = request.URL.absoluteString;
     NSRange range = [urlStr rangeOfString:@"code="];
     if (range.location != NSNotFound) {
-        int loc = range.location +range.length;
+        int loc = range.location + range.length;
         NSString *code = [urlStr substringFromIndex:loc];
         [self accessTokenWithCode:code];
     }

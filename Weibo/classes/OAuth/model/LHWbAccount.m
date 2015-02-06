@@ -42,4 +42,5 @@
     [coder encodeInt64:self.uid forKey:@"uid"];
     [coder encodeObject:self.expiresTime forKey:@"expiresTime"];
 }
+
 @end

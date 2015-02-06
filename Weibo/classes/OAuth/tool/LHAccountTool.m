@@ -16,13 +16,27 @@
 {
     NSDate *now = [NSDate date];
     account.expiresTime = [now dateByAddingTimeInterval:account.expires_in];
+    NSLog(@"save accout  %@", account.access_token);
     
-    [NSKeyedArchiver archiveRootObject:account toFile:FILEPATH];
+    NSString *file = [[NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"accout1.data"];
+    NSLog(@"%@", file);
+    file = @"/Users/lh/Desktop/data.txt";
+    
+    [NSKeyedArchiver archiveRootObject:account toFile:file];
+    
+   
+    LHWbAccount *account1 = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+    
+     NSLog(@"get accout  %@", account1.access_token);
 }
 
 +(LHWbAccount *)account
 {
-    LHWbAccount *accout = [NSKeyedUnarchiver unarchiveObjectWithFile:FILEPATH];
+    NSString * file = [[NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"accout1.data"];
+    
+    file = @"/Users/lh/Desktop/data.txt";
+    LHWbAccount *accout = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+
   
     NSDate *now = [NSDate date];
     //NSOrderedAscending = -1L, NSOrderedSame, NSOrderedDescending
