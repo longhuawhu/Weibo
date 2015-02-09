@@ -72,7 +72,7 @@
             self.retweeted_status.text = retweeteddict[@"text"];
             self.retweeted_status.user = [LHUser userWithDict:retweeteddict[@"user"]];
             self.retweeted_status.thumbnail_pic = retweeteddict[@"thumbnail_pic"];
-            NSLog(@"%@", self.retweeted_status.text);
+        //    NSLog(@"%@", self.retweeted_status.text);
         }
     }
     

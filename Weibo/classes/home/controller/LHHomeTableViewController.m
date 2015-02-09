@@ -42,12 +42,12 @@
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
 
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    NSLog(@"accout ***  %@", [LHAccountTool account]);
+//    NSLog(@"accout ***  %@", [LHAccountTool account]);
     params[@"access_token"] = [LHAccountTool account].access_token;
     params[@"count"] = @25;
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
-        NSLog(@"%@", dictArray[0]);
+       // NSLog(@"%@", dictArray[0]);
         NSMutableArray *statusArray = [NSMutableArray array];
         for (NSDictionary *dict in dictArray) {
             LHStatuses *status = [LHStatuses statusesWithDict:dict];

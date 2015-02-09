@@ -214,10 +214,12 @@
         self.vipView.hidden = NO;
         self.vipView.image = [UIImage imageWithName:[NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank]] ;
         self.vipView.frame = self.statusFrame.vipViewF;
+        self.nameLable.textColor = [UIColor orangeColor];
          NSLog(@"****%@ ", [NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank] );
     }
     else
     {
+        self.nameLable.textColor = [UIColor blackColor];
         self.vipView.hidden = YES;
     }
     
