@@ -11,6 +11,9 @@
 #import "LHStatusFrame.h"
 #import "LHStatuses.h"
 #import "UIImageView+WebCache.h"
+#import "UIImage+LH.h"
+
+#define LHSTatusTableBorder 5
 
 @interface LHStatusCell()
 
@@ -40,6 +43,8 @@
 
 @property (nonatomic, weak) UIImageView *retweetPhotoView;
 
+@property (nonatomic, weak) UIImageView * statusToolBar;
+
 @end
 
 @implementation LHStatusCell
@@ -64,6 +69,8 @@
         [self setupStatusToolSubviews];
     }
     
+   // self.contentView.backgroundColor = [UIColor clearColor];
+    
     return self;
 }
 
@@ -73,41 +80,54 @@
  */
 -(void)setupOriginalSubviews
 {
+    
+   // self.selectedBackgroundView = [[UIView alloc] init];
+    
+    
     UIImageView *topView = [[UIImageView alloc] init];
+    topView.image = [UIImage resizeImageWithName:@"timeline_card_top_background"];
+    topView.highlightedImage = [UIImage resizeImageWithName:@"timeline_card_top_background_highlighted"];
+    topView.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:topView];
     self.topView = topView;
     
     UIImageView *iconView = [[UIImageView alloc] init];
-    [self.contentView addSubview:iconView];
+    [self.topView addSubview:iconView];
     self.iconView = iconView;
     
     UIImageView *vipView = [[UIImageView alloc] init];
-    [self.contentView addSubview:vipView];
+    [self.topView addSubview:vipView];
     self.vipView = vipView;
     
     UIImageView *photoView = [[UIImageView alloc] init];
-    [self.contentView addSubview:photoView];
+    [self.topView addSubview:photoView];
     self.photoView = photoView;
     
     UILabel *nameLabel = [[UILabel alloc] init];
     nameLabel.font = LHStatusNameFont;
+    nameLabel.textColor = [UIColor colorWithRed:225/255.0 green:135/255.0 blue:85/255.0 alpha:1.0];
+    nameLabel.backgroundColor = [UIColor clearColor];
     [self.topView addSubview:nameLabel];
     self.nameLable = nameLabel;
     
     UILabel *contentLable = [[UILabel alloc] init];
     contentLable.font = LHStatusNameFont;
+    contentLable.backgroundColor = [UIColor clearColor];
     contentLable.numberOfLines = 0;//设置自动换行
     [self.topView addSubview:contentLable];
     self.contentLable = contentLable;
 
     UILabel *sourceLable = [[UILabel alloc] init];
     sourceLable.font = LHStatusSourceFont;
+    sourceLable.backgroundColor = [UIColor clearColor];
     [self.topView addSubview:sourceLable];
     self.sourceLable = sourceLable;
 
     
     UILabel *timeLable = [[UILabel alloc] init];
     timeLable.font = LHStatusTimeFont;
+    timeLable.textColor = [UIColor colorWithRed:225/255.0 green:135/255.0 blue:85/255.0 alpha:1.0];
+    timeLable.backgroundColor = [UIColor clearColor];
     [self.topView addSubview:timeLable];
     self.timeLable = timeLable;
 
@@ -120,14 +140,20 @@
 -(void)setupRetweetSubviews
 {
     UIImageView *retweetView = [[UIImageView alloc] init];
+    retweetView.image = [UIImage resizeImageWithName:@"timeline_retweet_background" left:0.9 top:0.5];
     [self.topView addSubview:retweetView];
     self.retweetView = retweetView;
     
     UILabel *retweetNameLabel = [[UILabel alloc] init];
+    retweetNameLabel.backgroundColor = [UIColor clearColor];
+    retweetNameLabel.font = LHStatusRetweetNameFont;
     [self.retweetView addSubview:retweetNameLabel];
     self.retweetNameLable = retweetNameLabel;
     
     UILabel *retweetContentLable = [[UILabel alloc] init];
+    retweetContentLable.backgroundColor = [UIColor clearColor];
+    retweetContentLable.font = LHStatusRetweetNameFont;
+    retweetContentLable.numberOfLines = 0;
     [self.retweetView addSubview:retweetContentLable];
     self.retweetContentLable = retweetContentLable;
     
@@ -141,7 +167,12 @@
  */
 -(void)setupStatusToolSubviews
 {
-    
+    UIImageView *statusToolBar = [[UIImageView alloc] init];
+    statusToolBar.image = [UIImage resizeImageWithName:@"timeline_card_bottom_background"];
+    statusToolBar.highlightedImage = [UIImage resizeImageWithName:@"timeline_card_bottom_background_highlighted"];
+    [self.contentView addSubview:statusToolBar];
+    self.statusToolBar = statusToolBar;
+
 }
 
 -(void)setStatusFrame:(LHStatusFrame *)statusFrame
@@ -151,8 +182,20 @@
     [self setupOriginalData];
     
     [self setupRetweetData];
+    
+    [self setupStatusToolData];
 }
 
+
+-(void)setFrame:(CGRect)frame
+{
+    frame.origin.x = LHSTatusTableBorder;
+    frame.origin.y += LHSTatusTableBorder;
+    frame.size.width -= 2 *LHSTatusTableBorder;
+    frame.size.height -= LHSTatusTableBorder;
+    
+    [super setFrame:frame];
+}
 -(void)setupOriginalData
 {
     LHStatuses *status = self.statusFrame.status;
@@ -160,15 +203,18 @@
     
     self.topView.frame = self.statusFrame.topViewF;
     
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageWithName:@"avatar_default_small"]];
     self.iconView.frame = self.statusFrame.iconViewF;
+    NSLog(@"user.profile_image_url %@ ", user.profile_image_url);
     
     self.nameLable.text = user.name;
     self.nameLable.frame = self.statusFrame.nameLableF;
     
-    if (user.isVip) {
+    if (user.mbrank) {
         self.vipView.hidden = NO;
-        self.vipView.image = [UIImage imageNamed:@"common_icon_membership"];
+        self.vipView.image = [UIImage imageWithName:[NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank]] ;
+        self.vipView.frame = self.statusFrame.vipViewF;
+         NSLog(@"****%@ ", [NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank] );
     }
     else
     {
@@ -230,6 +276,10 @@
     
 }
 
+-(void)setupStatusToolData
+{
+    self.statusToolBar.frame = self.statusFrame.statusToolbarF;
+}
 - (void)awakeFromNib {
     // Initialization code
 }

@@ -47,6 +47,8 @@
 
 @property (nonatomic, assign, readonly) CGRect retweetPhotoViewF;
 
+@property (nonatomic, assign, readonly) CGRect statusToolbarF;
+
 @property (nonatomic, assign) float cellHeight;
 
 @end

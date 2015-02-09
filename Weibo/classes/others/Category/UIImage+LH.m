@@ -18,16 +18,23 @@
         NSString *imageNameAppend = [imageName stringByAppendingString:@"_os7"];
         UIImage *image = [UIImage imageNamed:imageNameAppend];
         if (image == nil) {
-            return [UIImage imageNamed:imageName];
+            return [UIImage imageNamed:imageNameAppend];
         }
+        
+        return image;
     }
-    return [UIImage imageNamed:imageName];
+    
+     return [UIImage imageNamed:imageName];
 }
 
 +(UIImage*) resizeImageWithName:(NSString *)name
 {
-    UIImage *image = [self imageWithName:name];
-    return [image stretchableImageWithLeftCapWidth:image.size.width*0.5 topCapHeight:image.size.height*0.5];
+    return [UIImage resizeImageWithName:name left:0.5 top:0.5];
 }
 
++(UIImage*) resizeImageWithName:(NSString *)name left:(CGFloat)left top:(CGFloat)top
+{
+    UIImage *image = [self imageWithName:name];
+    return [image stretchableImageWithLeftCapWidth:image.size.width*left topCapHeight:image.size.height*top];
+}
 @end

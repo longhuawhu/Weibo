@@ -20,7 +20,7 @@
     _status = status;
     
     //
-    CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat cellW = [UIScreen mainScreen].bounds.size.width - 2 * LHStatusCellBorder;
     
     //topView
     CGFloat topViewW = cellW;
@@ -28,20 +28,20 @@
     CGFloat topViewX = 0;
     CGFloat topViewY = 0;
     
-    //iconView
-    CGFloat iconViewW = 35;
+    //iconView 设置图象
+    CGFloat iconViewW = 50;
     CGFloat iconViewX = LHStatusCellBorder;
     CGFloat iconViewY = LHStatusCellBorder;
     _iconViewF = CGRectMake(iconViewX, iconViewY, iconViewW, iconViewW);
     
-    //nickname
+    //nickname设置昵称
     CGFloat nameLabelX = CGRectGetMaxX(_iconViewF) + LHStatusCellBorder;
     CGFloat nameLabelY = iconViewY;
     CGSize nameLabelSize = [status.user.name sizeWithFont:LHStatusNameFont];
     _nameLableF = (CGRect){{nameLabelX, nameLabelY}, nameLabelSize};
     
-    //
-    if (status.user.isVip) {
+    //设置会员图片
+    if (status.user.mbrank) {
         CGFloat vipViewW = 14;
         CGFloat vipViewH = nameLabelSize.height;
         CGFloat vipViewX = CGRectGetMaxX(_nameLableF) + LHStatusCellBorder;;
@@ -49,18 +49,19 @@
         _iconViewF = CGRectMake(vipViewX, vipViewY, vipViewW, vipViewH);
     }
     
-    
+    //设置时间
     CGFloat timeLabelX = nameLabelX;
     CGFloat timeLabelY = CGRectGetMaxY(_nameLableF) + LHStatusCellBorder;
     CGSize timeLabelSize = [status.created_at sizeWithFont:LHStatusTimeFont];
     _timeLableF = (CGRect){{timeLabelX, timeLabelY}, timeLabelSize};
     
+    //设置来源
     CGFloat sourceLabelX = CGRectGetMaxX(_timeLableF) + LHStatusCellBorder;
     CGFloat sourceLabelY = timeLabelY;
     CGSize sourceLabelSize = [status.source sizeWithFont:LHStatusSourceFont];
     _sourceLableF = (CGRect){{sourceLabelX, sourceLabelY}, sourceLabelSize};
     
-    
+    //设置微博正文
     CGFloat contentLabelX = LHStatusCellBorder;
     CGFloat contentLabelY = MAX(CGRectGetMaxY(_timeLableF), CGRectGetMaxY(_iconViewF)) + LHStatusCellBorder;
     CGSize contentLabelSize = [status.text sizeWithFont:LHStatusNameFont constrainedToSize:CGSizeMake(cellW - 2*LHStatusCellBorder, MAXFLOAT)];
@@ -126,6 +127,15 @@
 //    
     _topViewF = CGRectMake(0, 0, cellW, topViewH);
     
-    _cellHeight = topViewH;
+    
+    //工具条
+    CGFloat statusToolbarX = topViewX;
+    CGFloat statusToolbarY = CGRectGetMaxY(_topViewF);// + LHStatusCellBorder;
+    CGFloat statusToolbarW = topViewW;
+    CGFloat statusToolBarH = 35;
+    _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolBarH);
+    
+    _cellHeight = CGRectGetMaxY(_statusToolbarF) + LHStatusCellBorder;
+    
 }
 @end

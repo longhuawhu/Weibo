@@ -11,4 +11,5 @@
 @interface UIImage (LH)
 +(UIImage*) imageWithName:(NSString *)imageName;
 +(UIImage*) resizeImageWithName:(NSString *)name;
++(UIImage*) resizeImageWithName:(NSString *)name left:(CGFloat)left top:(CGFloat)top;
 @end

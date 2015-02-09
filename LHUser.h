@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString *profile_image_url;
 
-@property (nonatomic, assign, getter=isVip) BOOL Vip;
+@property (nonatomic, assign) long mbrank;
 
 +(instancetype)userWithDict:(NSDictionary *)dict;
 

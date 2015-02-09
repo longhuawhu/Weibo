@@ -28,6 +28,7 @@
 		EB48A6D71A845481008E8098 /* LHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48A6D61A845481008E8098 /* LHUser.m */; };
 		EB48A6DA1A847015008E8098 /* LHStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48A6D91A847015008E8098 /* LHStatusCell.m */; };
 		EB48A6DD1A8491AE008E8098 /* LHStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48A6DC1A8491AE008E8098 /* LHStatusFrame.m */; };
+		EB48A6E01A889F40008E8098 /* NSDate+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48A6DF1A889F40008E8098 /* NSDate+LH.m */; };
 		EB7530611A80F36500CF72FA /* LHTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7530601A80F36500CF72FA /* LHTitleButton.m */; };
 		EB7530851A82141200CF72FA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7530731A82141200CF72FA /* AFHTTPRequestOperation.m */; };
 		EB7530861A82141200CF72FA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7530751A82141200CF72FA /* AFHTTPRequestOperationManager.m */; };
@@ -115,6 +116,8 @@
 		EB48A6D91A847015008E8098 /* LHStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatusCell.m; sourceTree = "<group>"; };
 		EB48A6DB1A8491AE008E8098 /* LHStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStatusFrame.h; sourceTree = SOURCE_ROOT; };
 		EB48A6DC1A8491AE008E8098 /* LHStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatusFrame.m; sourceTree = SOURCE_ROOT; };
+		EB48A6DE1A889F40008E8098 /* NSDate+LH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LH.h"; sourceTree = "<group>"; };
+		EB48A6DF1A889F40008E8098 /* NSDate+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LH.m"; sourceTree = "<group>"; };
 		EB75305F1A80F36500CF72FA /* LHTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTitleButton.h; sourceTree = "<group>"; };
 		EB7530601A80F36500CF72FA /* LHTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTitleButton.m; sourceTree = "<group>"; };
 		EB7530721A82141200CF72FA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -615,6 +618,8 @@
 				EBD06A3E1A80C8C800EF8209 /* UIBarButtonItem+LH.m */,
 				EB8AC4AC1A83575900136A8E /* LHWeiboTool.h */,
 				EB8AC4AD1A83575900136A8E /* LHWeiboTool.m */,
+				EB48A6DE1A889F40008E8098 /* NSDate+LH.h */,
+				EB48A6DF1A889F40008E8098 /* NSDate+LH.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -760,6 +765,7 @@
 				EB48A6C01A844709008E8098 /* SDImageCache.m in Sources */,
 				EB48A6BE1A844709008E8098 /* MKAnnotationView+WebCache.m in Sources */,
 				EBD06A421A80E65600EF8209 /* LHSearchBar.m in Sources */,
+				EB48A6E01A889F40008E8098 /* NSDate+LH.m in Sources */,
 				EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */,
 				EB7530861A82141200CF72FA /* AFHTTPRequestOperationManager.m in Sources */,
 				EB7530891A82141200CF72FA /* AFSecurityPolicy.m in Sources */,

@@ -47,6 +47,7 @@
     params[@"count"] = @25;
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
+        NSLog(@"%@", dictArray[0]);
         NSMutableArray *statusArray = [NSMutableArray array];
         for (NSDictionary *dict in dictArray) {
             LHStatuses *status = [LHStatuses statusesWithDict:dict];
@@ -79,6 +80,9 @@
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     titleButton.selected = YES;
     self.navigationItem.titleView = titleButton;
+    
+    self.tableView.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1.0];
+  //  #define IWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 }
 
 -(void)titleClick:(LHTitleButton *)titleButton

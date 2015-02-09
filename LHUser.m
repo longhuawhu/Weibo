@@ -21,6 +21,7 @@
         self.name = dict[@"name"];
         self.profile_image_url = dict[@"profile_image_url"];
         self.ID = [dict[@"id"] longLongValue];
+        self.mbrank = [dict[@"mbrank"] longValue];
     }
     
     return self;
