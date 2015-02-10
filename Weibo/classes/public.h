@@ -11,4 +11,12 @@
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
+
+#define LHStatusNameFont  [UIFont systemFontOfSize:13]
+#define LHStatusRetweetNameFont  LHStatusNameFont
+
+#define LHStatusTimeFont  [UIFont systemFontOfSize:11]
+
+#define LHStatusSourceFont  LHStatusTimeFont
+
 #endif

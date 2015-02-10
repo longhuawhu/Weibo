@@ -47,7 +47,6 @@
     params[@"count"] = @25;
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
-       // NSLog(@"%@", dictArray[0]);
         NSMutableArray *statusArray = [NSMutableArray array];
         for (NSDictionary *dict in dictArray) {
             LHStatuses *status = [LHStatuses statusesWithDict:dict];

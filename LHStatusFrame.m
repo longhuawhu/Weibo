@@ -9,7 +9,7 @@
 #import "LHStatusFrame.h"
 #import "LHStatuses.h"
 #import "LHUser.h"
-
+#import "public.h"
 #define LHStatusCellBorder 5
 
 

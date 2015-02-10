@@ -60,6 +60,9 @@
 		EBD06A3C1A80AB6400EF8209 /* LHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A3B1A80AB6400EF8209 /* LHNavigationController.m */; };
 		EBD06A3F1A80C8C800EF8209 /* UIBarButtonItem+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A3E1A80C8C800EF8209 /* UIBarButtonItem+LH.m */; };
 		EBD06A421A80E65600EF8209 /* LHSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A411A80E65600EF8209 /* LHSearchBar.m */; };
+		EBD154961A89CB42005DDD92 /* LHRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD154951A89CB42005DDD92 /* LHRetweetView.m */; };
+		EBD154991A89DB5A005DDD92 /* LHStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD154981A89DB5A005DDD92 /* LHStatusTopView.m */; };
+		EBE100A31A88E442008262AF /* LHStatusToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE100A21A88E442008262AF /* LHStatusToolBarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +186,12 @@
 		EBD06A3E1A80C8C800EF8209 /* UIBarButtonItem+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LH.m"; sourceTree = "<group>"; };
 		EBD06A401A80E65600EF8209 /* LHSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSearchBar.h; sourceTree = "<group>"; };
 		EBD06A411A80E65600EF8209 /* LHSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSearchBar.m; sourceTree = "<group>"; };
+		EBD154941A89CB42005DDD92 /* LHRetweetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRetweetView.h; sourceTree = "<group>"; };
+		EBD154951A89CB42005DDD92 /* LHRetweetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHRetweetView.m; sourceTree = "<group>"; };
+		EBD154971A89DB5A005DDD92 /* LHStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStatusTopView.h; sourceTree = "<group>"; };
+		EBD154981A89DB5A005DDD92 /* LHStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatusTopView.m; sourceTree = "<group>"; };
+		EBE100A11A88E442008262AF /* LHStatusToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStatusToolBarView.h; sourceTree = "<group>"; };
+		EBE100A21A88E442008262AF /* LHStatusToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatusToolBarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +494,12 @@
 				EB7530601A80F36500CF72FA /* LHTitleButton.m */,
 				EB48A6D81A847015008E8098 /* LHStatusCell.h */,
 				EB48A6D91A847015008E8098 /* LHStatusCell.m */,
+				EBE100A11A88E442008262AF /* LHStatusToolBarView.h */,
+				EBE100A21A88E442008262AF /* LHStatusToolBarView.m */,
+				EBD154941A89CB42005DDD92 /* LHRetweetView.h */,
+				EBD154951A89CB42005DDD92 /* LHRetweetView.m */,
+				EBD154971A89DB5A005DDD92 /* LHStatusTopView.h */,
+				EBD154981A89DB5A005DDD92 /* LHStatusTopView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -766,9 +781,12 @@
 				EB48A6BE1A844709008E8098 /* MKAnnotationView+WebCache.m in Sources */,
 				EBD06A421A80E65600EF8209 /* LHSearchBar.m in Sources */,
 				EB48A6E01A889F40008E8098 /* NSDate+LH.m in Sources */,
+				EBD154991A89DB5A005DDD92 /* LHStatusTopView.m in Sources */,
 				EBD06A2F1A7F802400EF8209 /* UIImage+LH.m in Sources */,
 				EB7530861A82141200CF72FA /* AFHTTPRequestOperationManager.m in Sources */,
+				EBE100A31A88E442008262AF /* LHStatusToolBarView.m in Sources */,
 				EB7530891A82141200CF72FA /* AFSecurityPolicy.m in Sources */,
+				EBD154961A89CB42005DDD92 /* LHRetweetView.m in Sources */,
 				EB48A6BF1A844709008E8098 /* NSData+ImageContentType.m in Sources */,
 				EB48A6CB1A844709008E8098 /* UIImageView+HighlightedWebCache.m in Sources */,
 				EB8AC4C01A835C9900136A8E /* LHAccountTool.m in Sources */,
@@ -876,9 +894,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Weibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -887,9 +906,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Weibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
