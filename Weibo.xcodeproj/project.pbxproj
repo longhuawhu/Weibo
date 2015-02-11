@@ -62,6 +62,11 @@
 		EBD06A421A80E65600EF8209 /* LHSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD06A411A80E65600EF8209 /* LHSearchBar.m */; };
 		EBD154961A89CB42005DDD92 /* LHRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD154951A89CB42005DDD92 /* LHRetweetView.m */; };
 		EBD154991A89DB5A005DDD92 /* LHStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD154981A89DB5A005DDD92 /* LHStatusTopView.m */; };
+		EBD1550A1A8B4317005DDD92 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EBD155001A8B4317005DDD92 /* MJRefresh.bundle */; };
+		EBD1550B1A8B4317005DDD92 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD155031A8B4317005DDD92 /* MJRefreshBaseView.m */; };
+		EBD1550C1A8B4317005DDD92 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD155051A8B4317005DDD92 /* MJRefreshConst.m */; };
+		EBD1550D1A8B4317005DDD92 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD155071A8B4317005DDD92 /* MJRefreshFooterView.m */; };
+		EBD1550E1A8B4317005DDD92 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD155091A8B4317005DDD92 /* MJRefreshHeaderView.m */; };
 		EBE100A31A88E442008262AF /* LHStatusToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE100A21A88E442008262AF /* LHStatusToolBarView.m */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +195,16 @@
 		EBD154951A89CB42005DDD92 /* LHRetweetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHRetweetView.m; sourceTree = "<group>"; };
 		EBD154971A89DB5A005DDD92 /* LHStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStatusTopView.h; sourceTree = "<group>"; };
 		EBD154981A89DB5A005DDD92 /* LHStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatusTopView.m; sourceTree = "<group>"; };
+		EBD155001A8B4317005DDD92 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		EBD155011A8B4317005DDD92 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		EBD155021A8B4317005DDD92 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		EBD155031A8B4317005DDD92 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		EBD155041A8B4317005DDD92 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		EBD155051A8B4317005DDD92 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		EBD155061A8B4317005DDD92 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		EBD155071A8B4317005DDD92 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		EBD155081A8B4317005DDD92 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		EBD155091A8B4317005DDD92 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
 		EBE100A11A88E442008262AF /* LHStatusToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStatusToolBarView.h; sourceTree = "<group>"; };
 		EBE100A21A88E442008262AF /* LHStatusToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatusToolBarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,6 +279,7 @@
 		EB7530701A82141200CF72FA /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				EBD154FF1A8B4317005DDD92 /* MJRefresh */,
 				EB48A69C1A844709008E8098 /* SDWebImage */,
 				EB48A6CE1A8447F0008E8098 /* MBProgressHUD */,
 				EB7530711A82141200CF72FA /* AFNetworking */,
@@ -639,6 +655,23 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		EBD154FF1A8B4317005DDD92 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				EBD155001A8B4317005DDD92 /* MJRefresh.bundle */,
+				EBD155011A8B4317005DDD92 /* MJRefresh.h */,
+				EBD155021A8B4317005DDD92 /* MJRefreshBaseView.h */,
+				EBD155031A8B4317005DDD92 /* MJRefreshBaseView.m */,
+				EBD155041A8B4317005DDD92 /* MJRefreshConst.h */,
+				EBD155051A8B4317005DDD92 /* MJRefreshConst.m */,
+				EBD155061A8B4317005DDD92 /* MJRefreshFooterView.h */,
+				EBD155071A8B4317005DDD92 /* MJRefreshFooterView.m */,
+				EBD155081A8B4317005DDD92 /* MJRefreshHeaderView.h */,
+				EBD155091A8B4317005DDD92 /* MJRefreshHeaderView.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -719,6 +752,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD1550A1A8B4317005DDD92 /* MJRefresh.bundle in Resources */,
 				EBD06A061A7F669800EF8209 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,10 +795,12 @@
 				EB48A6C81A844709008E8098 /* UIImage+GIF.m in Sources */,
 				EBD06A3C1A80AB6400EF8209 /* LHNavigationController.m in Sources */,
 				EB48A6D71A845481008E8098 /* LHUser.m in Sources */,
+				EBD1550C1A8B4317005DDD92 /* MJRefreshConst.m in Sources */,
 				EB75308A1A82141200CF72FA /* AFURLConnectionOperation.m in Sources */,
 				EB8AC4B71A835BEE00136A8E /* LHWbAccount.m in Sources */,
 				EB48A6CC1A844709008E8098 /* UIImageView+WebCache.m in Sources */,
 				EB48A6DD1A8491AE008E8098 /* LHStatusFrame.m in Sources */,
+				EBD1550B1A8B4317005DDD92 /* MJRefreshBaseView.m in Sources */,
 				EB75308C1A82141200CF72FA /* AFURLResponseSerialization.m in Sources */,
 				EB48A6D11A8447F0008E8098 /* MBProgressHUD.m in Sources */,
 				EB48A6C71A844709008E8098 /* UIButton+WebCache.m in Sources */,
@@ -775,8 +811,10 @@
 				EB75308B1A82141200CF72FA /* AFURLRequestSerialization.m in Sources */,
 				EBD06A351A7FB27C00EF8209 /* LHTabBarButton.m in Sources */,
 				EB48A6C11A844709008E8098 /* SDWebImageCompat.m in Sources */,
+				EBD1550E1A8B4317005DDD92 /* MJRefreshHeaderView.m in Sources */,
 				EBD069D31A7F1F5400EF8209 /* main.m in Sources */,
 				EB48A6C21A844709008E8098 /* SDWebImageDecoder.m in Sources */,
+				EBD1550D1A8B4317005DDD92 /* MJRefreshFooterView.m in Sources */,
 				EB48A6C01A844709008E8098 /* SDImageCache.m in Sources */,
 				EB48A6BE1A844709008E8098 /* MKAnnotationView+WebCache.m in Sources */,
 				EBD06A421A80E65600EF8209 /* LHSearchBar.m in Sources */,

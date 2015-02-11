@@ -18,10 +18,12 @@
 #import "LHStatuses.h"
 #import "LHStatusFrame.h"
 #import "LHStatusCell.h"
+#import "MJRefresh.h"
 
-@interface LHHomeTableViewController ()
+@interface LHHomeTableViewController () <MJRefreshBaseViewDelegate>
 @property (nonatomic, strong) NSMutableArray *statuseFrames;
 @property (nonatomic, weak) LHTitleButton* titleButton;
+@property (nonatomic, weak) MJRefreshFooterView* footer;
 @end
 
 @implementation LHHomeTableViewController
@@ -54,6 +56,51 @@
     [self.tableView addSubview:refreshControl];
     
     [self refreshControlValueChange:refreshControl];
+    
+    MJRefreshFooterView *footer = [MJRefreshFooterView footer];
+    footer.scrollView = self.tableView;
+    footer.delegate = self;
+    self.footer = footer;
+}
+-(void)dealloc
+{
+    [self.footer free];
+}
+
+-(void)refreshViewBeginRefreshing:(MJRefreshBaseView *)refreshView
+{
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [LHAccountTool account].access_token;
+    params[@"count"] = @10;
+    if (self.statuseFrames.count) {
+        LHStatusFrame *statusFrame= [self.statuseFrames lastObject];
+        long long lastId =  [statusFrame.status.idstr longLongValue] - 1;
+        params[@"max_id"] = @(lastId);
+    }
+    
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *dictArray = responseObject[@"statuses"];
+        NSMutableArray *statusArray = [NSMutableArray array];
+        for (NSDictionary *dict in dictArray) {
+            LHStatuses *status = [LHStatuses statusesWithDict:dict];
+            LHStatusFrame *statusFrame = [[LHStatusFrame alloc] init];
+            statusFrame.status = status;
+            [statusArray addObject:statusFrame];
+        }
+ 
+        [self.statuseFrames addObjectsFromArray:statusArray];
+    
+        [self.tableView reloadData];
+        
+        [refreshView endRefreshing];
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"-------%@", error);
+        [refreshView endRefreshing];
+    }];
+
 }
 
 -(void)refreshControlValueChange:(UIRefreshControl *)refreshControl
@@ -161,7 +208,7 @@
     LHTitleButton *titleButton = [LHTitleButton titleButton];
     titleButton.frame = CGRectMake(0, 0, 0, 30);
     [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    [titleButton setTitle:@"首页" forState:UIControlStateNormal];    
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     titleButton.selected = YES;
     self.navigationItem.titleView = titleButton;
