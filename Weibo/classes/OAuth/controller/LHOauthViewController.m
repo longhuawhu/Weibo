@@ -43,6 +43,9 @@
         int loc = range.location + range.length;
         NSString *code = [urlStr substringFromIndex:loc];
         [self accessTokenWithCode:code];
+        
+        //不加载回调页面
+        return NO;
     }
     
     return YES;
