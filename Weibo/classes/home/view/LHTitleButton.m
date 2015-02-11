@@ -47,4 +47,14 @@
     CGFloat imageH = contentRect.size.height;
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
+
+-(void)setTitle:(NSString *)title forState:(UIControlState)state
+{
+    CGFloat titleW = [title sizeWithFont:self.titleLabel.font].width;
+    CGRect frame = self.frame;
+    frame.size.width = titleW + 25;
+    self.frame = frame;
+    
+    [super setTitle:title forState:state];
+}
 @end

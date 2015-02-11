@@ -20,31 +20,57 @@
 #import "LHStatusCell.h"
 
 @interface LHHomeTableViewController ()
-@property (nonatomic, strong) NSArray *statuseFrames;
+@property (nonatomic, strong) NSMutableArray *statuseFrames;
+@property (nonatomic, weak) LHTitleButton* titleButton;
 @end
 
 @implementation LHHomeTableViewController
 
+-(NSMutableArray *)statuseFrames
+{
+    if (_statuseFrames == nil) {
+        _statuseFrames = [NSMutableArray array];
+    }
+    return  _statuseFrames;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupRefreshView];
     
     //1 setup navigationbar
     [self setupNavBar];
     
     //2 load weibo data
-    [self loadWeiboData];
+    [self loadUserInfo];
     
 }
 
+-(void) setupRefreshView
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshControlValueChange:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    
+    [self refreshControlValueChange:refreshControl];
+}
 
--(void)loadWeiboData
+-(void)refreshControlValueChange:(UIRefreshControl *)refreshControl
 {
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    NSLog(@"accout ***  %@", [LHAccountTool account]);
+    //    NSLog(@"accout ***  %@", [LHAccountTool account]);
     params[@"access_token"] = [LHAccountTool account].access_token;
-    params[@"count"] = @25;
+    params[@"count"] = @10;
+    
+    if (self.statuseFrames.count) {
+        LHStatusFrame *statusFrame= self.statuseFrames[0];
+        params[@"since_id"] = statusFrame.status.idstr;
+    }
+   
+    
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
         NSMutableArray *statusArray = [NSMutableArray array];
@@ -54,15 +80,75 @@
             statusFrame.status = status;
             [statusArray addObject:statusFrame];
         }
-        self.statuseFrames = statusArray;
+      //  self.statuseFrames = statusArray;
+        NSMutableArray *tempArray = [NSMutableArray array];
+        [tempArray addObjectsFromArray:statusArray];
+        [tempArray addObjectsFromArray:self.statuseFrames];
+        self.statuseFrames = tempArray;
         
         [self.tableView reloadData];
         
+        //停止刷新
+        [refreshControl endRefreshing];
+        
+        [self showNewStatusCount:statusArray.count];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-      NSLog(@"-------%@", error);
+        NSLog(@"-------%@", error);
     }];
 }
 
+-(void)showNewStatusCount:(int) count
+{
+    UIButton *btn = [[UIButton alloc] init];
+    
+    [self.navigationController.view insertSubview:btn belowSubview:self.navigationController.navigationBar];
+    
+    btn.userInteractionEnabled = NO;
+    [btn setBackgroundImage:[UIImage resizeImageWithName:@"timeline_new_status_background"] forState:UIControlStateNormal];
+    if (count) {
+        NSString *title = [NSString stringWithFormat:@"共有%d条新微博", count];
+        [btn setTitle:title forState:UIControlStateNormal];
+    }else{
+        [btn setTitle:@"没有新微博" forState:UIControlStateNormal];
+    }
+    
+    CGFloat btnH = 44;
+    CGFloat btnY = 64-btnH;
+    CGFloat btnX = 0;
+    CGFloat btnW = self.view.frame.size.width;
+    btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        btn.transform = CGAffineTransformMakeTranslation(0, btnH);
+    } completion:^(BOOL finished) {
+        [UIView animateKeyframesWithDuration:0.5 delay:1.0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+            btn.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [btn removeFromSuperview];
+      }];
+    }];
+    
+}
+
+
+-(void)loadUserInfo
+{
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [LHAccountTool account].access_token;
+    params[@"uid"] = @([LHAccountTool account].uid);
+    
+    
+    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        LHUser *user = [LHUser userWithDict:responseObject];
+       // self.navigationController.title = user.name;
+        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"-------%@", error);
+    }];
+ 
+}
 -(void)setupNavBar
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
@@ -73,12 +159,13 @@
     // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithName:@"navigationbar_friendsearch"]style:UIBarMetricsDefault target:nil action:nil];
     
     LHTitleButton *titleButton = [LHTitleButton titleButton];
+    titleButton.frame = CGRectMake(0, 0, 0, 30);
     [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    [titleButton setTitle:@"haha" forState:UIControlStateNormal];
-    titleButton.frame = CGRectMake(0, 0, 100, 30);
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];    
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     titleButton.selected = YES;
     self.navigationItem.titleView = titleButton;
+    self.titleButton = titleButton;
     
     self.tableView.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1.0];
   //  #define IWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
