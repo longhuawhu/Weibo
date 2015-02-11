@@ -23,14 +23,22 @@
 }
 -(BOOL)isYesterday
 {
-//    NSCalendar *calendar = [NSCalendar currentCalendar];
-//    int unit = NSCalendarUnitDay | NSCalendarUnitYear | NSCalendarUnitMonth;
-//    
-//    NSDateComponents *nowCmps = [calendar components:unit fromDate:[NSDate date]];
-//    NSDateComponents *selfCmps = [calendar components:unit fromDate:self];
-//    
-//    return (nowCmps.year == selfCmps.year) && (nowCmps.month == selfCmps.month) && (nowCmps.day == selfCmps.day);
-    return NO;
+    NSDate *now = [NSDate date];
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    
+    NSString *nowStr = [fmt stringFromDate:now];
+    NSDate *nowDate = [fmt dateFromString:nowStr];
+    
+    NSString *selfStr = [fmt stringFromDate:self];
+    NSDate *selfDate = [fmt dateFromString:selfStr];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *cmps = [calendar components:NSCalendarUnitDay fromDate:selfDate toDate:nowDate options:0];
+    
+    
+    return cmps.day == 1;
 }
 -(BOOL)isThisYear
 {

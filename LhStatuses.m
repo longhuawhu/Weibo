@@ -16,6 +16,8 @@
 {
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
+#warning 真机调试必须设着时区，因为上面的时间格式是欧美格式，大陆可能无法识别该格式，导致解析返回nil
+    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en-US"];
     NSDate *createDate  = [fmt dateFromString:_created_at];
     
     if (createDate.isToday) {
