@@ -13,7 +13,7 @@
 
 @optional
 -(void)tabBar:(LHTabBar *)tabBar didSelectedItemFrom:(int)from to:(int)to;
-
+-(void)tabbarDidClickedPlusBtn:(LHTabBar *)tabBar;
 @end
 
 @interface LHTabBar : UIView

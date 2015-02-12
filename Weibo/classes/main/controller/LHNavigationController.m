@@ -21,6 +21,7 @@
     
 }
 
+
 +(void)setupBarButtonItemTheme
 {
     UIBarButtonItem *item = [UIBarButtonItem appearance];
@@ -30,14 +31,22 @@
         [item setBackButtonBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_push"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
         [item setBackButtonBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
     }
-    
+
     
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[UITextAttributeTextColor] = [UIColor orangeColor];
-    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    textAttrs[UITextAttributeFont] = [UIFont systemFontOfSize:12];
+    textAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowOffset = CGSizeMake(0, 0);
+    textAttrs[NSShadowAttributeName] = shadow;
+    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    [item setTitleTextAttributes:textAttrs forState:UIControlStateHighlighted];
+    
+    
+#warning   遗留问题，UIControlStateDisabled设置没有效果
+    NSMutableDictionary *disableTextAttrs = [NSMutableDictionary dictionary];
+    disableTextAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+    disableTextAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:8];
+    [item setTitleTextAttributes:disableTextAttrs forState:UIControlStateDisabled];
 }
 
 +(void)setupNavBarTheme
@@ -45,12 +54,13 @@
     UINavigationBar *navBar = [UINavigationBar appearance];
     if(!iOS7){
         [navBar setBackgroundImage:[UIImage imageWithName:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     }
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[UITextAttributeTextColor] = [UIColor blackColor];
-    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    textAttrs[UITextAttributeFont] = [UIFont systemFontOfSize:18];
+    textAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
+   // textAttrs[NSShadowAttributeName] = [NSValue valueWithUIOffset:UIOffsetZero];
+    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:18];
+    [navBar setTitleTextAttributes:textAttrs];
     
 }
 

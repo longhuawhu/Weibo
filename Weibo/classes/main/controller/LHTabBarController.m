@@ -14,6 +14,7 @@
 #import "UIImage+LH.h"
 #import "LHTabBar.h"
 #import "LHNavigationController.h"
+#import "LHComposeController.h"
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
@@ -58,6 +59,13 @@
 {
     self.selectedIndex = to;
    // NSLog(@"%d -- %d", from, to);
+}
+
+-(void)tabbarDidClickedPlusBtn:(LHTabBar *)tabBar
+{
+    LHComposeController *compose = [[LHComposeController alloc] init];
+    LHNavigationController *nav = [[LHNavigationController alloc] initWithRootViewController:compose];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 -(void)setupAllChildViewController

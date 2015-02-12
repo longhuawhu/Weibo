@@ -44,6 +44,8 @@
 		EB8AC4B71A835BEE00136A8E /* LHWbAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8AC4B51A835BEE00136A8E /* LHWbAccount.m */; };
 		EB8AC4BC1A835C0300136A8E /* LHNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8AC4BB1A835C0300136A8E /* LHNewfeatureViewController.m */; };
 		EB8AC4C01A835C9900136A8E /* LHAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8AC4BF1A835C9900136A8E /* LHAccountTool.m */; };
+		EBCEB3461A8B8A3D0057A277 /* LHComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCEB3451A8B8A3D0057A277 /* LHComposeController.m */; };
+		EBCEB34A1A8B92790057A277 /* LHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCEB3491A8B92790057A277 /* LHTextView.m */; };
 		EBD069D31A7F1F5400EF8209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D21A7F1F5400EF8209 /* main.m */; };
 		EBD069D61A7F1F5400EF8209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069D51A7F1F5400EF8209 /* AppDelegate.m */; };
 		EBD069ED1A7F1F5400EF8209 /* WeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD069EC1A7F1F5400EF8209 /* WeiboTests.m */; };
@@ -157,6 +159,10 @@
 		EB8AC4BB1A835C0300136A8E /* LHNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHNewfeatureViewController.m; sourceTree = "<group>"; };
 		EB8AC4BE1A835C9900136A8E /* LHAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHAccountTool.h; path = tool/LHAccountTool.h; sourceTree = "<group>"; };
 		EB8AC4BF1A835C9900136A8E /* LHAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LHAccountTool.m; path = tool/LHAccountTool.m; sourceTree = "<group>"; };
+		EBCEB3441A8B8A3D0057A277 /* LHComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHComposeController.h; sourceTree = "<group>"; };
+		EBCEB3451A8B8A3D0057A277 /* LHComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHComposeController.m; sourceTree = "<group>"; };
+		EBCEB3481A8B92790057A277 /* LHTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTextView.h; sourceTree = "<group>"; };
+		EBCEB3491A8B92790057A277 /* LHTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTextView.m; sourceTree = "<group>"; };
 		EBD069CD1A7F1F5400EF8209 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD069D11A7F1F5400EF8209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD069D21A7F1F5400EF8209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
@@ -368,6 +374,33 @@
 			name = tool;
 			sourceTree = "<group>";
 		};
+		EBCEB3421A8B8A250057A277 /* compose */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEB3471A8B92540057A277 /* view */,
+				EBCEB3431A8B8A250057A277 /* controller */,
+			);
+			path = compose;
+			sourceTree = "<group>";
+		};
+		EBCEB3431A8B8A250057A277 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEB3441A8B8A3D0057A277 /* LHComposeController.h */,
+				EBCEB3451A8B8A3D0057A277 /* LHComposeController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		EBCEB3471A8B92540057A277 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEB3481A8B92790057A277 /* LHTextView.h */,
+				EBCEB3491A8B92790057A277 /* LHTextView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		EBD069C41A7F1F5400EF8209 = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +457,7 @@
 		EBD06A071A7F72C500EF8209 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				EBCEB3421A8B8A250057A277 /* compose */,
 				EB8AC4B81A835C0300136A8E /* newfeature */,
 				EB8AC4AF1A835BEE00136A8E /* OAuth */,
 				EBD06A2B1A7F72E400EF8209 /* other */,
@@ -772,6 +806,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB8AC4AE1A83575900136A8E /* LHWeiboTool.m in Sources */,
+				EBCEB3461A8B8A3D0057A277 /* LHComposeController.m in Sources */,
 				EB7530851A82141200CF72FA /* AFHTTPRequestOperation.m in Sources */,
 				EB48A6C51A844709008E8098 /* SDWebImageManager.m in Sources */,
 				EB48A6C61A844709008E8098 /* SDWebImagePrefetcher.m in Sources */,
@@ -781,6 +816,7 @@
 				EB48A6CD1A844709008E8098 /* UIView+WebCacheOperation.m in Sources */,
 				EBD06A2A1A7F72C500EF8209 /* LHMessageTableViewController.m in Sources */,
 				EB48A6C41A844709008E8098 /* SDWebImageDownloaderOperation.m in Sources */,
+				EBCEB34A1A8B92790057A277 /* LHTextView.m in Sources */,
 				EB48A6D41A84526C008E8098 /* LhStatuses.m in Sources */,
 				EBD06A271A7F72C500EF8209 /* LHHomeTableViewController.m in Sources */,
 				EB7530871A82141200CF72FA /* AFHTTPSessionManager.m in Sources */,

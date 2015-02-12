@@ -32,6 +32,8 @@
         [plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
         [plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
         plusButton.bounds = CGRectMake(0, 0, plusButton.currentBackgroundImage.size.width, plusButton.currentBackgroundImage.size.height);
+        [plusButton addTarget:self action:@selector(plusBtnClicked) forControlEvents:UIControlEventTouchDown];
+        
         self.plusBtn = plusButton;
         [self addSubview:plusButton];
        
@@ -46,6 +48,13 @@
     }
     
     return  _tabBarButtons;
+}
+
+-(void)plusBtnClicked
+{
+    if([self.delegate respondsToSelector:@selector(tabbarDidClickedPlusBtn:)]){
+        [self.delegate tabbarDidClickedPlusBtn:self];
+    }
 }
 
 -(void)addTabBarButtonWithItem:(UITabBarItem *)item
