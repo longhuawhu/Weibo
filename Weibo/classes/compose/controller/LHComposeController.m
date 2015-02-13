@@ -12,9 +12,11 @@
 #import "LHAccountTool.h"
 #import "LHWbAccount.h"
 #import "MBProgressHUD.h"
+#import "LHComposeToolBarView.h"
 
-@interface LHComposeController()
+@interface LHComposeController() <UITextViewDelegate>
 @property (nonatomic, weak) LHTextView *textView;
+@property (nonatomic, weak) LHComposeToolBarView *toolbar;
 @end
 
 @implementation LHComposeController
@@ -26,28 +28,60 @@
     [self setupNavBar];
     
     [self setupTextView];
+    
+    [self setupToolBar];
    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.textView becomeFirstResponder];
+    //[self.textView becomeFirstResponder];
+}
+
+-(void)setupToolBar
+{
+    LHComposeToolBarView *toolbar = [[LHComposeToolBarView alloc] init];
+    CGFloat toolbarH = 44;
+    CGFloat toolbarW = self.view.frame.size.width;
+    CGFloat toolbarY = self.view.frame.size.height - toolbarH;
+    
+    toolbar.frame = CGRectMake(0, toolbarY, toolbarW, toolbarH);
+    toolbar.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:toolbar];
+    self.toolbar = toolbar;
 }
 
 -(void)setupTextView
 {
     LHTextView *textView = [[LHTextView alloc] init];
     textView.frame = self.view.bounds;
-    textView.font = [UIFont systemFontOfSize:11];
+    textView.alwaysBounceVertical = YES;
+    textView.delegate = self;
+    textView.font = [UIFont systemFontOfSize:12];
+    textView.placeholder = @"新鲜事!!!!!!!!!!!!!!!新鲜事新鲜事!!!!!!!!!!!!!!!!!新鲜事!!!!!!!!!!!!!!!!!vv!!!!!!!!!!!!!!!!!!!新鲜事!!!!!!!!!!!!!!!!!!!";
     [self.view addSubview:textView];
     self.textView = textView;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged) name:UITextViewTextDidChangeNotification object:textView];
+    
+    //监听键盘
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void)keyboardWillChange:(NSNotification *)note
+{
+    NSLog(@"%@", note.userInfo);
+    CGRect keyboardRect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat animateTime = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    [UIView animateWithDuration:animateTime animations:^{
+          self.toolbar.transform = CGAffineTransformMakeTranslation(0, -keyboardRect.size.height);
+    }];
+  
 }
 
 -(void)textChanged
@@ -85,6 +119,11 @@
     }];
     
     [self  cancle];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.textView endEditing:YES];
 }
 
 @end

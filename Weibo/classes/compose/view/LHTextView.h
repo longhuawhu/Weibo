@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LHTextView : UITextView
-
+@property (nonatomic, copy) NSString *placeholder;
 @end
